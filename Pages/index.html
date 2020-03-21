@@ -6,6 +6,18 @@
     <!--Linking CSS code in styles folder which is one folder back and located in the styles folder-->
     <link rel="stylesheet" href="../styles/mainUI_Style.css" />
 
+    <!--START FONTS IMPORT-->
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,400;1,700&family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--END FONTS IMPORT-->
+
     <!--Default Code & To be changed later when we expand device compatibility-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,21 +35,27 @@
       <img id="index_introduction_image" src="../Resources/background.jfif" />
       <!--Now that we added an image, we need to place text and buttons on it-->
       <section id="index_introduction_top">
+        <!--Creating a future link for the burger menu-->
+        <a href="www.google.com">
+          <img id="index_introduction_burger" src="../Resources/burger.png" />
+        </a>
+        <!--A Logo that works with the host name and a fitting icon -->
+        <img id="index_introduction_logo" src="../Resources/Logo.png" />
         <ul id="index_introduction_menu">
-          <li>
-            <!--Creating a future link for the burger menu-->
-            <a href="www.google.com">
-              <img
-                id="index_introduction_burger"
-                src="../Resources/burger.png"
-              />
-            </a>
-          </li>
-          <li>
-            <!--A Logo that works with the host name and a fitting icon -->
-            <img id="index_introduction_logo" src="../Resources/Logo.png" />
-          </li>
+          <li>Sign In</li>
+          <li>Contact Us</li>
         </ul>
+      </section>
+      <!--Seach Feature-->
+      <section id="index_search">
+        <label id="index_main_lable">Sales Forcasting</label>
+
+        <label id="index_seach_lable">S E A R C H</label>
+        <input
+          id="index_search_input"
+          type="text"
+          placeholder="Eg. Hand Sanitizer "
+        />
       </section>
     </section>
   </body>

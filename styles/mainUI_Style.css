@@ -1,0 +1,45 @@
+body {
+  /*We are following a dark theme with white text*/
+  background-color: RGB(28, 24, 24); /*TODO - Change at a later stage*/
+  /*Margin to remove unneccecary space*/
+  margin: 0;
+  color: white;
+}
+
+/*We name our Id's based on which file it originates fron, where on the
+page it is and what type it is
+
+We comment on */
+#index_introduction_image {
+  /*Image is located on the top of the index page*/
+  width: 100%;
+  position: absolute;
+  background-size: contain;
+}
+#index_introduction_top {
+  /*Section is located on the top of the index page*/
+  height: 20%;
+  width: 100%;
+  position: absolute;
+  /* background-color: rgba(100, 100, 100, 0.7); */
+}
+#index_introduction_logo {
+  /*Image is located on the top of the index page*/
+  width: 20%;
+  margin-top: 1.5%;
+  margin-left: 11%;
+  position: absolute;
+}
+#index_introduction_burger {
+  /*Image is located on the top of the index page*/
+  width: 3%;
+  margin-top: 2.5%;
+  margin-left: 6%;
+  position: absolute;
+}
+li {
+  /*This orders the lists in a relativly neat agle*/
+  float: left;
+  text-decoration: none;
+  list-style: none;
+}

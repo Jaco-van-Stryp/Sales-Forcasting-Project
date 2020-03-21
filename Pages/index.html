@@ -1,11 +1,44 @@
+<!--We Purchased the domain address - www.jaxifysoftware.com which will host our website-->
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--Linking CSS code in styles folder which is one folder back and located in the styles folder-->
+    <link rel="stylesheet" href="../styles/mainUI_Style.css" />
+
+    <!--Default Code & To be changed later when we expand device compatibility-->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sales Forcasting</title>
+
+    <!--Title of the website (text in tab)-->
+    <title>Jaxify Software - Sales Forcasting</title>
   </head>
   <body>
-    <p>Version 0.0.1 - Aplha 1 - No User Interface Designed Yet</p>
+    <!--Creating various sections of the website, we want the website to be
+    modern looking with sections from top to bottom, we want everything looking polished
+    and proffesional -->
+    <section id="introduction">
+      <!--We want all images to be stored under resources, this file can be expanded
+      as time goes on, make sure all image names changes as well-->
+      <img id="index_introduction_image" src="../Resources/background.jfif" />
+      <!--Now that we added an image, we need to place text and buttons on it-->
+      <section id="index_introduction_top">
+        <ul id="index_introduction_menu">
+          <li>
+            <!--Creating a future link for the burger menu-->
+            <a href="www.google.com">
+              <img
+                id="index_introduction_burger"
+                src="../Resources/burger.png"
+              />
+            </a>
+          </li>
+          <li>
+            <!--A Logo that works with the host name and a fitting icon -->
+            <img id="index_introduction_logo" src="../Resources/Logo.png" />
+          </li>
+        </ul>
+      </section>
+    </section>
   </body>
 </html>

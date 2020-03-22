@@ -32,7 +32,6 @@
     <section id="introduction">
       <!--We want all images to be stored under resources, this file can be expanded
       as time goes on, make sure all image names changes as well-->
-      <img id="index_introduction_image" src="/Resources/background.jfif" />
       <!--Now that we added an image, we need to place text and buttons on it-->
       <section id="index_introduction_top">
         <!--Creating a future link for the burger menu-->
@@ -40,17 +39,19 @@
           <img id="index_introduction_burger" src="/Resources/burger.png" />
         </a>
         <!--A Logo that works with the host name and a fitting icon -->
-        <img id="index_introduction_logo" src="/Resources/Logo.png" />
+        <a href="https://www.jaxifysoftware.com"
+          ><img id="index_introduction_logo" src="/Resources/Logo.png"
+        /></a>
         <ul id="index_introduction_menu">
-          <li id="index_into_men">Sign In</li>
-          <li id="index_into_men">Contact Us</li>
+          <a href="#"><li id="index_into_men">Sign In</li></a>
+          <a href="#"> <li id="index_into_men">Contact Us</li></a>
         </ul>
       </section>
       <!--Seach Feature-->
       <section id="index_search">
         <label id="index_main_lable">Sales Forcasting</label>
 
-        <label id="index_seach_lable">S E A R C H</label>
+        <a href="#"> <label id="index_seach_lable">SEARCH</label></a>
         <input
           id="index_search_input"
           type="text"
@@ -60,18 +61,26 @@
       <!--Buttons for further navigation-->
       <section id="index_buttons">
         <ul>
-          <li id="index_btn">
-            Menu
-          </li>
-          <li id="index_btn">
-            Shop
-          </li>
-          <li id="index_btn">
-            Upgrade
-          </li>
-          <li id="index_btn">
-            Help
-          </li>
+          <a href="#">
+            <li id="index_btn">
+              Menu
+            </li></a
+          >
+          <a href="#"
+            ><li id="index_btn">
+              Shop
+            </li></a
+          >
+          <a href="#"
+            ><li id="index_btn">
+              Upgrade
+            </li></a
+          >
+          <a href="#"
+            ><li id="index_btn">
+              Help
+            </li></a
+          >
         </ul>
       </section>
     </section>

@@ -156,34 +156,34 @@ li {
     font-family: "Bellota Text", cursive;
     top: 15%;
     width: 100%;
-    font-size: 250%;
+    font-size: 50px;
+    letter-spacing: 10px;
   }
   #index_seach_lable {
     border-width: 5px;
     border-style: solid;
     text-align: center;
     font-family: "Oswald", sans-serif;
-    left: 35%;
-    top: 40%;
-    width: 30%;
+    left: 25%;
+    top: 50%;
+    width: 50%;
     font-size: 150%;
-    border-radius: 30px;
     letter-spacing: 3px;
     border-width: 2px;
   }
   #index_search_input {
     letter-spacing: 2px;
-    height: 10%;
+    height: 40px;
     outline: none;
     border-style: none;
     text-align: center;
     font-family: "Oswald", sans-serif;
-    left: 13%;
-    top: 55%;
+    left: 5%;
+    top: 35%;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    width: 75%;
+    width: 90%;
     font-size: 150%;
   }
   #index_introduction_menu {
@@ -204,10 +204,10 @@ li {
     font-size: 150%;
     border-radius: 50px;
     padding: 1%;
-    margin-bottom: 2%;
-    margin-left: 15%;
-    margin-right: 20%;
-    width: 60%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 4%;
+    width: 80%;
     text-align: center;
     border-style: solid;
     border-width: 1px;
@@ -216,7 +216,7 @@ li {
     font-family: "Bellota Text", cursive;
   }
   #index_buttons {
-    top: 70%;
+    top: 60%;
     left: 0%;
   }
   html,

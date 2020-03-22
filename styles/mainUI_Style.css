@@ -177,7 +177,7 @@ li {
     outline: none;
     border-style: none;
     text-align: center;
-    font-family: "Oswald", sans-serif;
+    font-family: "Oswald", sans-serif; /*TODO fix bug where seach bar moves into sales bar when keyboard shows */
     left: 5%;
     top: 35%;
     -webkit-border-radius: 50px;

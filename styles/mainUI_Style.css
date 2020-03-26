@@ -1,6 +1,6 @@
 body {
   background-size: cover;
-  background-image: url("/Resources/background.jfif");
+  background-image: url("../Resources/background.jfif");
   background-color: RGB(28, 24, 24); /*TODO - Change at a later stage*/
   /*Margin to remove unneccecary space*/
   margin: 0;

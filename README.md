@@ -1,4 +1,4 @@
-# Sales-Forcasting-Project
+# Sales Forcasting Project
 
 # Project Purpose
 

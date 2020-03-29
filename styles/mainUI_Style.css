@@ -196,10 +196,6 @@ li {
     font-size: 100%;
   }
 
-  #index_buttons {
-    width: 100%;
-  }
-
   #index_btn {
     font-size: 150%;
     border-radius: 50px;
@@ -218,6 +214,7 @@ li {
   #index_buttons {
     top: 60%;
     left: 0%;
+    width: 100%;
   }
   html,
   body {

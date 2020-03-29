@@ -1,73 +1,66 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-	<title>Sales Forcasting - Contact Us</title>
-	<link rel="stylesheet" href="styles/contact_usUI_Style.css" />
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <title>Sales Forcasting - Contact Us</title>
+    <link rel="stylesheet" href="styles/contact_usUI_Style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <section id="index_introduction_top">
+      <img id="index_introduction_logo" src="Resources/Logo.png" />
 
-</head>
-<body>
+      <ul id="index_introduction_menu">
+        <a href="index.html"> <li id="main_menu">Home</li> </a>
+      </ul>
+    </section>
 
-	<section id="index_introduction_top">			
-			
-			
-			<img id="index_introduction_logo" src="Resources/Logo.png" />
-		
+    <section id="Information">
+      <section id="info_link_hedder">
+        <label id="index_main_lable">
+          You can contact us through the following methods:
+        </label>
+      </section>
+      <section id="contactMethods">
+        <ul>
+          <a href="#">
+            <li id="info_link">Email: jaxifysoftware@gmail.com</li>
+            <!--TODO Email -->
+          </a>
+          <a href="#">
+            <li id="info_link">Customer support number: 012 395 2013</li>
+            <!--TODO Number -->
+          </a>
+        </ul>
+      </section>
 
-			<ul id="index_introduction_menu">
-				<a href="https://www.jaxifysoftware.com"> <li id="main_menu">Main Menu</li> </a>
-				
-			</ul>
-	</section>
-	
-	<section id="Information">
-			<section id="info_link_hedder">
-				<label id="index_main_lable">
-					You can contact us through
-					the following methods:
-				</label>
-			</section>
-			<section id="contactMethods">
+      <section id="message_board">
+        <section id="msg_label">
+          Or message us on our message board:
+        </section>
+        <section id="msg_info">
+          Please enter and submit any complaints or remarks in the message box
+          below and we will get back to you as swiftly as possible.
+          <br />
+          Please note, this option is only possible if you are registered and
+          signed in.<br />
+          If you are not signed in, please use the link:
+          <a id="sign_link" href="#"> sign in / create account</a>
+        </section>
 
+        <section id="message">
+          <a onclick="()">
+            <!--TODO Submit button-->
+            <label id="submit_lable">Submit Message</label>
+          </a>
 
-				<ul>
-					<a href="#">
-						<li id="info_link">Email: jaxifysoftware@gmail.com </li> <!--TODO Email -->
-					</a>
-					<a href="#">
-						<li id="info_link">Customer support number: 012 395 2013</li><!--TODO Number -->
-					</a>
-				</ul>
-
-
-			</section>
-
-			<section id="message_board">
-				<section id="msg_label">
-					Or message us on our message board:
-				</section>
-				<section id="msg_info">
-					Please enter and submit any complaints or remarks in the message box below and 
-					we will get back to you as swiftly as possible.
-					<br />
-					Please note, this option is only possible if you are registered and signed in.<br />
-					If you are not signed in, please use the link: <a id="sign_link" href="#"> sign in / create account</a>
-				</section>
-
-				<section id="message">
-					<a onclick="()"> <!--TODO Submit button-->
-					<label id="submit_lable">Submit Message</label>
-					</a>
-
-					<input id="message_input"
-						   type="text"
-						   placeholder="Eg. Problems navigating the site " />
-				</section>
-
-				</section>
-
-		</section>
-	</body>
-
-	</html>
+          <input
+            id="message_input"
+            type="text"
+            placeholder="Eg. Problems navigating the site "
+          />
+        </section>
+      </section>
+    </section>
+  </body>
+</html>

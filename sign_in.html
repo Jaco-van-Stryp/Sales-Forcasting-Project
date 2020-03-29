@@ -1,110 +1,53 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <title>Sales Forcasting - sign in </title>
+  <head>
+    <title>Sales Forcasting - Sign In</title>
     <link rel="stylesheet" href="styles/sign_inUI_Style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-</head>
-<body>
+  </head>
+  <body>
     <section id="index_introduction_top">
-
-
-        <img id="index_introduction_logo" src="Resources/Logo.png" />
-
-
-        <ul id="index_introduction_menu">
-            <a href="https://www.jaxifysoftware.com"> <li id="main_menu">Main Menu</li> </a>
-
-        </ul>
+      <img id="index_introduction_logo" src="Resources/Logo.png" />
+      <ul id="index_introduction_menu">
+        <a href="index.html">
+          <li id="main_menu">Home</li>
+        </a>
+      </ul>
     </section>
 
-    <section id="Sign_in">
-        <section id="info_link_hedder">
-            <label id="index_main_lable">
-                Please enter your information below :
-            </label>
-        </section>
-        <section id="info_list">
-            <ul>
-                <li id="info_list_item">
-                    <input id="client_info"
-                           type="text"
-                           placeholder="Emial address / Username" />
-                </li>
-                
-                <li id="info_list_item">
-                    <input id="client_info"
-                           type="password"
-                           placeholder="Password" />
-                </li>
-            </ul>
-
-             
+    <label id="signin_main_lable">
+      Good Day!<br /><br />Please Enter Your Credentials
+    </label>
+    <section id="info_list">
+      <ul>
+        <section id="info_list_item">
+          <input id="client_info" type="text" placeholder="E-Mail Address" />
         </section>
 
-        <section id="verification_button">
-            <a onclick="client_info()">
-                <!--TODO sign in button-->
-                <button id="submit_info" type="button">Sign in</button>
-
-            </a>
-
-            
+        <section id="info_list_item">
+          <input id="client_info" type="password" placeholder="Password" />
         </section>
-
-   </section>
-
-    <section id="Create_account">
-        <section id="create_account_hedder">
-        If you do not have an account, please create one below :
-        </section>
-        <section id="create_info">   <!--TODO -->
-            <ul>
-                <li id="create_list_item">
-                    <input id="create_information"
-                           type="text"
-                           placeholder="Name and Surname" />
-                </li>
-
-                <li id="create_list_item">
-                    <input id="create_information"
-                           type="text"
-                           placeholder="Emial address" />
-                </li>
-
-                <li id="create_list_item">
-                    <input id="create_information"
-                           type="text"
-                           placeholder="Your unique username" />
-                </li>
-
-                <li id="create_list_item">
-                    <input id="create_information"
-                           type="password"
-                           placeholder="Password" />
-                </li>
-
-                <li id="create_list_item">
-                    <input id="create_information"
-                           type="password"
-                           placeholder="Confirm Password" />
-                </li>
-            </ul>
-
-            <section id="create_account_btn">
-                <a onclick="create_info_button()">
-                    <!--TODO create account button-->
-                    <button id="create" type="button">Create Account</button>
-                </a>
-            </section>
-
-        </section>
-
+      </ul>
     </section>
 
-</body>
-
+    <section id="signin_button_reg">
+      <ul id="btns_r">
+        <a href="#">
+          <li id="reg_btn">
+            Register
+          </li></a
+        >
+      </ul>
+    </section>
+    <section id="signin_button_signin">
+      <ul id="btns_s">
+        <a href="#">
+          <li id="signin_btn">
+            Sign In
+          </li></a
+        >
+      </ul>
+    </section>
+  </body>
 </html>

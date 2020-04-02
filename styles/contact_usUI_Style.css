@@ -1,0 +1,135 @@
+/*TODO Make the website actually look good*/
+
+body {
+  background-size: cover;
+  background-image: url("../Resources/background.jfif");
+  background-color: RGB(28, 24, 24);
+  margin: 0;
+  color: white;
+  background-attachment: fixed;
+  user-select: none;
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  height: 100%;
+  overflow: auto;
+}
+
+li {
+  float: left;
+  text-decoration: none;
+  list-style: none;
+}
+
+#index_main_lable {
+  position: absolute;
+  font-family: "Bellota Text";
+  top: 25%;
+  left: 63%;
+  font-size: 180%;
+}
+
+#index_introduction_top {
+  height: 20%;
+  width: 100%;
+  position: absolute;
+}
+
+#index_introduction_logo {
+  width: 25%;
+  margin-top: 1%;
+  margin-left: 2%;
+  position: absolute;
+}
+
+#index_introduction_menu {
+  margin-right: 7%;
+  margin-top: 3%;
+}
+
+#main_menu {
+  color: white;
+  margin-left: 3%;
+  float: right;
+  font-size: 150%;
+}
+#chatbot {
+  width: 30%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.472);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 3px;
+  padding: 1%;
+  text-align: center;
+  height: 50%;
+  position: absolute;
+  font-size: x-large;
+  top: 40%;
+  left: 60%;
+  outline: none;
+  border-width: 4px;
+  border-color: white;
+}
+#chatbot_responce {
+  height: 150px;
+  left: 28%;
+  top: 13%;
+  width: 27%;
+  font-size: large;
+  background: none;
+  outline: none;
+  border: none;
+  color: white;
+  position: absolute;
+  text-align: center;
+  padding: 35px 0;
+  text-align: center;
+  position: absolute;
+  font-family: "Bellota Text";
+  font-size: 150%;
+}
+#HelpfullUser {
+  position: absolute;
+  height: 100%;
+  float: left;
+  width: 60%;
+}
+
+#contact_btn {
+  font-size: 250%;
+  border-radius: 50px;
+  padding: 1%;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-bottom: 4%;
+  width: 60%;
+  text-align: center;
+  border-style: solid;
+  border-width: 1px;
+  font-size: larger;
+  letter-spacing: 3px;
+  font-family: "Bellota Text", cursive;
+  outline: none;
+}
+#contact_btn:hover {
+  background-color: coral;
+}
+#btn_pos {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  transform: rotate(-40deg);
+  transform-origin: 20% 40%;
+}
+h1 {
+  font-size: 300%;
+  position: absolute;
+  transform: rotate(-40deg);
+  transform-origin: 20% 40%;
+  top: 57%;
+  left: 40%;
+}

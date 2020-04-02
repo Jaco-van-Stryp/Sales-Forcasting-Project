@@ -100,13 +100,13 @@ li {
 }
 
 #contact_btn {
-  font-size: 250%;
+  font-size: 150%;
   border-radius: 50px;
   padding: 1%;
   margin-left: 5%;
   margin-right: 5%;
   margin-bottom: 4%;
-  width: 60%;
+  width: 70%;
   text-align: center;
   border-style: solid;
   border-width: 1px;
@@ -121,15 +121,12 @@ li {
 #btn_pos {
   position: absolute;
   top: 80%;
-  left: 40%;
-  transform: rotate(-40deg);
-  transform-origin: 20% 40%;
+  left: 34.5%;
 }
 h1 {
   font-size: 300%;
   position: absolute;
-  transform: rotate(-40deg);
-  transform-origin: 20% 40%;
+
   top: 57%;
   left: 40%;
 }

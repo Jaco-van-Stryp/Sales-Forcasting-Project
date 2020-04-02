@@ -101,6 +101,7 @@ a {
 #reg_btn:hover {
   background-color: coral;
 }
+
 #signin_btn {
   color: white;
   letter-spacing: 3px;
@@ -116,6 +117,7 @@ a {
   width: 100%;
   padding: 3%;
 }
+
 #reg_btn {
   color: white;
   letter-spacing: 3px;
@@ -138,6 +140,7 @@ a {
   width: 20%;
   float: left;
 }
+
 #signin_button_signin {
   position: absolute;
   top: 75%;

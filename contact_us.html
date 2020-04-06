@@ -26,14 +26,17 @@ I'm Here To Assist You!</textarea
       <label id="index_main_lable">
         What do you Need Help With?
       </label>
-      <textarea id="chatbot" rows="4" cols="50" wrap="soft">
+
+      <textarea
+        id="chatbot"
+        onchange="chatActive()"
+        rows="4"
+        cols="50"
+        wrap="soft"
+      >
 I Need Help With:
 
-- Making this page look good
-
-- [Version 0.0.1] Proof of concept
-
-- TODO - Provide Contact Information & Make it mobile compatible</textarea
+</textarea
       >
       <!--Chatbot V0.1 - BETA-->
     </section>
@@ -42,4 +45,5 @@ I Need Help With:
       <button id="contact_btn">Request Assistance Via Email</button>
     </section>
   </body>
+  <script type="text/javascript" src="js/chatbot.js"></script>
 </html>

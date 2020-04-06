@@ -114,6 +114,9 @@ li {
   letter-spacing: 3px;
   font-family: "Bellota Text", cursive;
   outline: none;
+  background: none;
+  color: white;
+  border-width: 3px;
 }
 #contact_btn:hover {
   background-color: coral;

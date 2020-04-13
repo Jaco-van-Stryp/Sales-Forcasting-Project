@@ -148,16 +148,8 @@ a {
   width: 20%;
   float: left;
 }
-/*-------------------------------------------------
-Freislich Make Mobile Compatible Using this sniplet,
 
-- Copy Essential CSS code and  paste it in the code snippet below
-- Make your browser size the shape of a phone or press f12 on chrome and click on TOGGLE DEVICE TOOLBAR
-- The code should adjust based on the size of the screen and snap to the 
-desktop version once the screen size goes large enough
-- Do not change any above values, just copy and paste & change in the below code block*/
-
-@media screen and (max-width:750px) {
+@media screen and (max-width: 1000px) {
   #index_introduction_top {
     height: 20%;
     width: 100%;

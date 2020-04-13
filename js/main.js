@@ -1,3 +1,5 @@
+
+
 updateExample(); //calling a function
 
 var id = setInterval(updateExample, 5000); //this is an interval based variable which executes functions based on an interval
@@ -30,5 +32,9 @@ function searchAnimation() {
     }, 5000)
     document.getElementById("index_search_input").value = "Please Wait, Searching..."
 
+
+}
+
+function updateData(input) {
 
 }

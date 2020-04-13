@@ -1,6 +1,7 @@
 var id = setInterval(chatUpdate, 1);
 
 
+
 //function result
 var reset = false;
 var result = "";

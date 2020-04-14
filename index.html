@@ -2,19 +2,14 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <!--Linking CSS code in styles folder which is one folder back and located in the styles folder-->
     <link rel="stylesheet" href="styles/mainUI_Style.css" />
 
     <!--START FONTS IMPORT-->
-    <link
-      href="https://fonts.googleapis.com/css?family=Oswald&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,400;1,700&family=Oswald&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,400;1,700&family=Oswald&display=swap" rel="stylesheet" />
 
     <!--END FONTS IMPORT-->
 
@@ -24,69 +19,68 @@
 
     <!--Title of the website (text in tab)-->
     <title>Jaxify Software - Sales Forcasting</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!--Creating various sections of the website, we want the website to be
     modern looking with sections from top to bottom, we want everything looking polished
     and proffesional -->
     <section id="introduction">
-      <!--We want all images to be stored under resources, this file can be expanded
+        <!--We want all images to be stored under resources, this file can be expanded
       as time goes on, make sure all image names changes as well-->
-      <!--Now that we added an image, we need to place text and buttons on it-->
-      <section id="index_introduction_top">
-        <!--Creating a future link for the burger menu-->
-        <a href="www.google.com">
-          <img id="index_introduction_burger" src="Resources/burger.png" />
-        </a>
-        <!--A Logo that works with the host name and a fitting icon -->
-        <a href="https://www.jaxifysoftware.com"
-          ><img id="index_introduction_logo" src="Resources/Logo.png"
-        /></a>
-        <ul id="index_introduction_menu">
-          <a href="sign_in.html"><li id="index_into_men">Sign In</li></a>
-          <a href="contact_us.html"> <li id="index_into_men">Contact Us</li></a>
-        </ul>
-      </section>
-      <!--Seach Feature-->
-      <section id="index_search">
-        <label id="index_main_lable">Sales Forcasting</label>
+        <!--Now that we added an image, we need to place text and buttons on it-->
+        <section id="index_introduction_top">
+            <!--Creating a future link for the burger menu-->
+            <a href="www.google.com">
+                <img id="index_introduction_burger" src="Resources/burger.png" />
+            </a>
+            <!--A Logo that works with the host name and a fitting icon -->
+            <a href="https://www.jaxifysoftware.com"><img id="index_introduction_logo" src="Resources/Logo.webp" /></a>
+            <ul id="index_introduction_menu">
+                <a href="sign_in.html">
+                    <li id="index_into_men">Sign In</li>
+                </a>
+                <a href="contact_us.html">
+                    <li id="index_into_men">Contact Us</li>
+                </a>
+            </ul>
+        </section>
+        <!--Seach Feature-->
+        <section id="index_search">
+            <label id="index_main_lable">Sales Forcasting</label>
 
-        <a onclick="update()" href="search_results.html">
-          <label id="index_seach_lable">SEARCH</label></a
-        >
-        <input
-          id="index_search_input"
-          type="text"
-          placeholder="Eg. Hand Sanitizer "
-        />
-      </section>
-      <!--Buttons for further navigation-->
-      <section id="index_buttons">
-        <ul>
-          <a href="#">
-            <li id="index_btn">
-              Profile
-            </li></a
-          >
-          <a href="#"
-            ><li id="index_btn">
-              Documentation
-            </li></a
-          >
-          <a href="#"
-            ><li id="index_btn">
-              Upgrade
-            </li></a
-          >
-          <a href="#"
-            ><li id="index_btn">
-              Help
-            </li></a
-          >
-        </ul>
-      </section>
+            <a onclick="searchDatabase()" href="search_results.html">
+                <label id="index_seach_lable">SEARCH</label></a>
+            <input id="index_search_input" type="text" placeholder="Eg. Hand Sanitizer " />
+        </section>
+        <!--Buttons for further navigation-->
+        <section id="index_buttons">
+            <ul>
+                <a href="#">
+                    <li id="index_btn">
+                        Profile
+                    </li>
+                </a>
+                <a href="#">
+                    <li id="index_btn">
+                        Documentation
+                    </li>
+                </a>
+                <a href="#">
+                    <li id="index_btn">
+                        Upgrade
+                    </li>
+                </a>
+                <a href="#">
+                    <li id="index_btn">
+                        Help
+                    </li>
+                </a>
+            </ul>
+        </section>
     </section>
-  </body>
-  <!--Linking JS Code in JS Folder-->
-  <script type="text/javascript" src="js/main.js"></script>
+</body>
+<!--Linking JS Code in JS Folder-->
+<script type="text/javascript" src="js/main.js"></script>
+
 </html>

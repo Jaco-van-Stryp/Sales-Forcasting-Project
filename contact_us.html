@@ -1,24 +1,28 @@
 ﻿<!--TODO Make the website actually look good-->
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <title>Sales Forcasting - Contact Us</title>
     <link rel="stylesheet" href="styles/contact_usUI_Style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <section id="index_introduction_top">
-      <img id="index_introduction_logo" src="Resources/Logo.png" />
+</head>
 
-      <ul id="index_introduction_menu">
-        <a href="index.html"> <li id="main_menu">Home</li> </a>
-      </ul>
+<body>
+    <section id="index_introduction_top">
+        <img id="index_introduction_logo" src="Resources/Logo.webp" />
+
+        <ul id="index_introduction_menu">
+            <a href="index.html">
+                <li id="main_menu">Home</li>
+            </a>
+        </ul>
     </section>
 
     <section id="Information">
-      <img src="Resources/help_page_user_main.png" id="HelpfullUser" />
-      <textarea id="chatbot_responce" rows="4" cols="50" wrap="soft" readonly>
+        <img src="Resources/help_page_user_main.webp" id="HelpfullUser" />
+        <textarea id="chatbot_responce" rows="4" cols="50" wrap="soft" readonly>
 Welcome To The Sales Forcasting Help Section!
 I'm Here To Assist You!</textarea
       >
@@ -44,6 +48,30 @@ I Need Help With:
     <section id="btn_pos">
       <button id="contact_btn">Request Assistance Via Email</button>
     </section>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
+        authDomain: "sales-forecasting-prj251.firebaseapp.com",
+        databaseURL: "https://sales-forecasting-prj251.firebaseio.com",
+        projectId: "sales-forecasting-prj251",
+        storageBucket: "sales-forecasting-prj251.appspot.com",
+        messagingSenderId: "872303846348",
+        appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
+        measurementId: "G-KS26CVC8Y2",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
   <script type="text/javascript" src="js/chatbot.js"></script>
 </html>

@@ -1,8 +1,7 @@
+//updateExample(); //calling a function
 
-
-updateExample(); //calling a function
-
-var id = setInterval(updateExample, 5000); //this is an interval based variable which executes functions based on an interval
+//Public Variables
+//var id = setInterval(updateExample, 5000); //this is an interval based variable which executes functions based on an interval
 
 //Functions are like voids, they execute a set of code and can be called using onclick="searchDatabase()"
 
@@ -17,10 +16,14 @@ function updateExample() {
 function searchDatabase() {
     var searchValue = document.getElementById('index_search_input').value; //gets the VALUE of custom ID
     //   document.getElementById('index_search_input').value = ""; //Sets the value
+
+    /*
     if (searchValue != "") {
         window.open('http://google.com/search?q=' + searchValue); //opens a new URL
         searchAnimation();
     }
+    */
+    storeSearchQuery(searchValue)
 }
 
 //Function plays an animation while searching
@@ -34,7 +37,15 @@ function searchAnimation() {
 
 
 }
+//Function to store the search query
+function storeSearchQuery(query) {
+    var mainData = "searchQuery=" + query
+    document.cookie = mainData;
+}
 
-function updateData(input) {
-
+//Function to retrieve the name for the query
+function writeSearchName() {
+    console.log(document.cookie)
+    var info = document.getElementById('results_query').value
+    console.log(info)
 }

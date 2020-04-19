@@ -49,3 +49,7 @@ function writeSearchName() {
     var info = document.getElementById('results_query').value
     console.log(info)
 }
+
+function SignIn() {
+    window.alert("working");
+}

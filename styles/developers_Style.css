@@ -1,0 +1,42 @@
+body {
+    background-size: cover;
+    background-image: url("../Resources/background.webp");
+    background-color: RGB(28, 24, 24);
+    /*TODO - Change at a later stage*/
+    /*Margin to remove unneccecary space*/
+    margin: 0;
+    color: white;
+    background-attachment: fixed;
+    user-select: none;
+}
+
+h1 {
+    color: white;
+    text-align: center;
+    font-size: 300%;
+}
+
+img {
+    width: 30%;
+}
+
+hr {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5%;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: white;
+}
+
+h2 {
+    color: white;
+    text-align: center;
+    font-size: 250%;
+}
+
+div {
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}

@@ -58,7 +58,8 @@ a {
     color: white;
 }
 
-#client_info {
+#client_info,
+#password_info {
     /* properties of the text fields */
     color: white;
     background: none;

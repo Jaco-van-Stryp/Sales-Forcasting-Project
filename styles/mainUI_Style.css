@@ -19,9 +19,7 @@ body {
     height: 100%;
     overflow: hidden;
 }
-.helpBody {
-    text-align: center;
-}
+
 
 /*We name our Id's based on which file it originates fron, where on the
 page it is and what type it is

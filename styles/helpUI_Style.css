@@ -1,0 +1,15 @@
+body {
+    background-size: cover;
+    background-image: url("../Resources/background.webp");
+    background-color: RGB(28, 24, 24);
+    /*TODO - Change at a later stage*/
+    /*Margin to remove unneccecary space*/
+    margin: 0;
+    color: white;
+    background-attachment: fixed;
+    user-select: none;
+}
+
+.helpBody {
+    text-align: center;
+}

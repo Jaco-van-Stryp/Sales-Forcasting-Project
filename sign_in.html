@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sales Forcasting - Sign In</title>
+    <link rel="stylesheet" href="styles/sign_inUI_Style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+    <section id="index_introduction_top">
+        <img id="index_introduction_logo" src="Resources/Logo.webp" />
+        <ul id="index_introduction_menu">
+            <a href="index.html">
+                <li id="main_menu">Home</li>
+            </a>
+        </ul>
+    </section>
+
+    <label id="signin_main_lable">
+      Good Day!<br /><br />Please Enter Your Credentials
+    </label>
+    <section id="info_list">
+        <ul>
+            <section id="info_list_item">
+                <input id="client_info" type="text" placeholder="E-Mail Address" />
+            </section>
+
+            <section id="info_list_item">
+                <input id="password_info" type="password" placeholder="Password" />
+            </section>
+        </ul>
+    </section>
+
+    <section id="signin_button_reg">
+        <ul id="btns_r">
+            <a href="#">
+                <li id="reg_btn">
+                    Register
+                </li>
+            </a>
+        </ul>
+    </section>
+    <section id="signin_button_signin">
+        <ul id="btns_s">
+            <a href="#">
+                <li id="signin_btn">
+                    Sign In
+                </li>
+            </a>
+        </ul>
+    </section>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
+            authDomain: "sales-forecasting-prj251.firebaseapp.com",
+            databaseURL: "https://sales-forecasting-prj251.firebaseio.com",
+            projectId: "sales-forecasting-prj251",
+            storageBucket: "sales-forecasting-prj251.appspot.com",
+            messagingSenderId: "872303846348",
+            appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
+            measurementId: "G-KS26CVC8Y2",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</body>
+<script>
+    type = "text/javascript";
+    src = "js/auth.js";
+</script>
+
+</html>

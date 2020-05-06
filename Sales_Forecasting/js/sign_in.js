@@ -47,7 +47,7 @@ function loginError(message) {
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
             console.log(firebaseUser);
-            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/");
+            window.location.replace("../index.html");
         } else {
             console.log("not logged in");
         }

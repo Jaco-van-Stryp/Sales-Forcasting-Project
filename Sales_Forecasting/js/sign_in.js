@@ -49,7 +49,7 @@ function loginError(message) {
 
 
     });
-
+    //TODO: Figure out how to do dynamic links and have it actually work
     var actionCodeSettings = {
         // URL you want to redirect back to. The domain (www.example.com) for this
         // URL must be whitelisted in the Firebase Console.
@@ -76,19 +76,6 @@ function loginError(message) {
             //Sign In
             const promise = auth.createUserWithEmailAndPassword(email, pass);
             promise.catch(e => loginError(e.message));
-
-            auth.sendSignInLinkToEmail(email, actionCodeSettings)
-                .then(function() {
-                    // The link was successfully sent. Inform the user.
-                    // Save the email locally so you don't need to ask the user for it again
-                    // if they open the link on the same device.
-                    window.alert("Email Sent")
-                    window.localStorage.setItem('emailForSignIn', email);
-                })
-                .catch(function(error) {
-                    window.alert("Email NOT Sent - " + error)
-                        // Some error occurred, you can inspect the code: error.code
-                });
         }
     });
 

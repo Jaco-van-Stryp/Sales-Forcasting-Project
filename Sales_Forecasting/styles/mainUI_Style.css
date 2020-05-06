@@ -103,7 +103,8 @@ li {
     margin-top: 3%;
 }
 
-#index_into_men {
+#index_into_men,
+#index_into_men_signin {
     color: white;
     margin-left: 3%;
     float: right;
@@ -111,6 +112,10 @@ li {
 }
 
 #index_into_men:hover {
+    text-decoration: underline;
+}
+
+#index_into_men_signin:hover {
     text-decoration: underline;
 }
 

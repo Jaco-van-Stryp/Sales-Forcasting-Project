@@ -41,7 +41,7 @@
             <a href="https://www.jaxifysoftware.com"><img id="index_introduction_logo" src="Resources/Logo.webp" /></a>
             <ul id="index_introduction_menu">
                 <a href="sign_in.html">
-                    <li id="index_into_men">Sign In</li>
+                    <li id="index_into_men_signin">Sign In</li>
                 </a>
                 <a href="contact_us.html">
                     <li id="index_into_men">Contact Us</li>
@@ -84,31 +84,20 @@
             </ul>
         </section>
     </section>
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
-
-    <script>
-        // Your web app's Firebase configuration
-        var firebaseConfig = {
-            apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
-            authDomain: "sales-forecasting-prj251.firebaseapp.com",
-            databaseURL: "https://sales-forecasting-prj251.firebaseio.com",
-            projectId: "sales-forecasting-prj251",
-            storageBucket: "sales-forecasting-prj251.appspot.com",
-            messagingSenderId: "872303846348",
-            appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
-            measurementId: "G-KS26CVC8Y2",
-        };
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-        firebase.analytics();
-    </script>
 </body>
 <!--Linking JS Code in JS Folder-->
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
 <script type="text/javascript" src="js/main.js"></script>
 
 </html>

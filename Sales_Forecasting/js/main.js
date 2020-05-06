@@ -53,3 +53,55 @@ function writeSearchName() {
 function SignIn() {
     window.alert("working");
 }
+
+function loginError(message) {
+    window.alert(message)
+}
+(function() {
+    var signedIn = false;
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
+        authDomain: "sales-forecasting-prj251.firebaseapp.com",
+        databaseURL: "https://sales-forecasting-prj251.firebaseio.com",
+        projectId: "sales-forecasting-prj251",
+        storageBucket: "sales-forecasting-prj251.appspot.com",
+        messagingSenderId: "872303846348",
+        appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
+        measurementId: "G-KS26CVC8Y2",
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    const signInBtn = document.getElementById("index_into_men_signin");
+
+    signInBtn.addEventListener('click', e => {
+        if (signedIn == true) {
+            firebase.auth().signOut().then(function() {
+                window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in"); =
+            }).catch(function(error) {
+                alert.window.log("Could Not Sign You Out")
+            });
+        } else {
+            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+
+        }
+        const auth = firebase.auth();
+        //Sign In
+        const promise = auth.createUserWithEmailAndPassword(email, pass);
+        promise.catch(e => loginError(e.message));
+    });
+
+    //Realtime listener
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+            console.log(firebaseUser);
+            signInBtn.innerHTML = "Sign Out";
+            signedIn = true;
+        } else {
+            console.log("not logged in");
+            signedIn = false;
+        }
+    });
+}());

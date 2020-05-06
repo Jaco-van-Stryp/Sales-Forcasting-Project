@@ -1,0 +1,114 @@
+<!--We Purchased the domain address - www.jaxifysoftware.com which will host our website-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--Linking CSS code in styles folder which is one folder back and located in the styles folder-->
+    <link rel="stylesheet" href="styles/mainUI_Style.css" />
+
+    <!--START FONTS IMPORT-->
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bellota+Text:ital,wght@0,400;1,700&family=Oswald&display=swap" rel="stylesheet" />
+
+    <!--END FONTS IMPORT-->
+
+    <!--Default Code & To be changed later when we expand device compatibility-->
+    <meta name="description" content="Forecast Sales - Grow Your Business" />
+    <meta name="robots" content="Sales Forecasting, Sales Prediction, Product Forecasting, Product Prediction" />
+    <meta name="googlebot" content="Sales Forecasting, Sales Prediction, Product Forecasting, Product Prediction" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--Title of the website (text in tab)-->
+    <title>Jaxify Software - Sales Forcasting</title>
+</head>
+
+<body>
+    <!--Creating various sections of the website, we want the website to be
+    modern looking with sections from top to bottom, we want everything looking polished
+    and proffesional -->
+    <section id="introduction">
+        <!--We want all images to be stored under resources, this file can be expanded
+      as time goes on, make sure all image names changes as well-->
+        <!--Now that we added an image, we need to place text and buttons on it-->
+        <section id="index_introduction_top">
+            <!--Creating a future link for the burger menu-->
+            <a href="https://www.google.com">
+                <img id="index_introduction_burger" src="Resources/burger.png" />
+            </a>
+            <!--A Logo that works with the host name and a fitting icon -->
+            <a href="https://www.jaxifysoftware.com"><img id="index_introduction_logo" src="Resources/Logo.webp" /></a>
+            <ul id="index_introduction_menu">
+                <a href="sign_in.html">
+                    <li id="index_into_men">Sign In</li>
+                </a>
+                <a href="contact_us.html">
+                    <li id="index_into_men">Contact Us</li>
+                </a>
+            </ul>
+        </section>
+        <!--Seach Feature-->
+        <section id="index_search">
+            <label id="index_main_lable">Sales Forcasting</label>
+
+            <a onclick="searchDatabase()" href="search_results.html">
+                <label id="index_seach_lable">SEARCH</label></a>
+            <input id="index_search_input" type="text" placeholder="Eg. Hand Sanitizer " />
+        </section>
+        <!--Buttons for further navigation-->
+        <section id="index_buttons">
+            <ul>
+                <a href="#">
+                    <li id="index_btn">
+                        Profile
+                    </li>
+                </a>
+                <a href="membership.html">
+                    <li id="index_btn">
+                        Store
+                    </li>
+                </a>
+                <a href="developers.html">
+                    <!--Dev-->
+                    <li id="index_btn">
+                        Developers
+                        <!--Dev-->
+                    </li>
+                </a>
+                <a href="help.html">
+                    <li id="index_btn">
+                        Help
+                    </li>
+                </a>
+            </ul>
+        </section>
+    </section>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
+
+    <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
+            authDomain: "sales-forecasting-prj251.firebaseapp.com",
+            databaseURL: "https://sales-forecasting-prj251.firebaseio.com",
+            projectId: "sales-forecasting-prj251",
+            storageBucket: "sales-forecasting-prj251.appspot.com",
+            messagingSenderId: "872303846348",
+            appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
+            measurementId: "G-KS26CVC8Y2",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+    </script>
+</body>
+<!--Linking JS Code in JS Folder-->
+<script type="text/javascript" src="js/main.js"></script>
+
+</html>

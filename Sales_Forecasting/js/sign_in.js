@@ -107,6 +107,8 @@ function loginError(message) {
                     .catch(function(error) {
                         console.error("Error writing document: ", error);
                     });
+            } else {
+                window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
             }
         } else {
             console.log("not logged in");

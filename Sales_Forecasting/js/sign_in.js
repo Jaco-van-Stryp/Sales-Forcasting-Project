@@ -17,6 +17,7 @@ function loginError(message) {
         document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>This Email Already Exists, Try Signing In!"
 
     }
+
 }
 (function() {
     // Our web app's Firebase configuration
@@ -94,14 +95,27 @@ function loginError(message) {
             console.log(firebaseUser);
             if (newUser == true) {
                 db.collection("users").doc(firebaseUser.uid).set({
-                        email: userEmail.value,
-                        username: "",
-                        membership: "default",
-                        searchHistory: [],
-                        age: 20
+                        email: userEmail.value, //Store User Email
+                        username: "N/A", //TODO Store Username
+                        membership: "default", //TODO create Membership
+                        searchHistory: [], //TODO store search history 
+                        age: "N/A", //TODO capture Age
+                        gender = "N/A", //TODO Capture Gender
+                        preferedTheme = "dark", //TODO Capture Theme
+                        regDate = Date.now(), //Stores Reg Date
+                        accountType = "individual", //TODO Capture Accout Type
+                        contactNumber = "N/A", //TODO Capture Phone Num
+                        recoveryEmail = "N/A", //TODO Capture Recovery Email
+                        qualifyFreeTrial = false, //TODO Free Trial
+                        removeAdverts = false, //TODO Set Up Ad's
+                        monthsPaidMember = 0, //TODO Total Months Paid
+                        referalID = firebaseUser.uid, //Stores Referal ID
+                        freeMonths = 0, //TODO Total Months of Membership Type Service Letf
+                        referedUser = false, //TODO Was The User Refered
+                        searchRemain = 10 //TODO Todal searches remaining before payment required
+
                     }).then(function() {
                         console.log("Document Account Successfully Created!");
-
                         window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
                     })
                     .catch(function(error) {

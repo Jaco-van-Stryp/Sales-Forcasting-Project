@@ -101,6 +101,7 @@ function loginError(message) {
                         age: 20
                     }).then(function() {
                         console.log("Document Account Successfully Created!");
+
                         window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
                     })
                     .catch(function(error) {

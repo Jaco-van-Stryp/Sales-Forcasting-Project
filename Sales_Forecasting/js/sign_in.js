@@ -1,6 +1,6 @@
 function loginError(message) {
     console.log(message)
-
+    newUser = false;
     if (message.includes("badly formatted")) {
         document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Follow The Appropriate Email Format<br>email@example.com"
 
@@ -13,9 +13,13 @@ function loginError(message) {
         document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Make Sure You Entered The Correct Email & Password!"
 
     }
+    if (message.includes("already in use")) {
+        document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>This Email Already Exists, Try Signing In!"
+
+    }
 }
 (function() {
-    // Your web app's Firebase configuration
+    // Our web app's Firebase configuration
     var firebaseConfig = {
         apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
         authDomain: "sales-forecasting-prj251.firebaseapp.com",
@@ -29,7 +33,10 @@ function loginError(message) {
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
+    //Initialize Firestore
+    const db = firebase.firestore();
 
+    var newUser = false;
     const userEmail = document.getElementById("client_info");
     const userPassword = document.getElementById("password_info");
     const btnLogin = document.getElementById('signin_btn');
@@ -64,8 +71,9 @@ function loginError(message) {
             installApp: true,
             minimumVersion: '12'
         },
-        dynamicLinkDomain: 'example.page.link'
+        dynamicLinkDomain: 'www.jaxifysoftware.com'
     };
+
 
     register.addEventListener('click', e => {
         const email = userEmail.value;
@@ -73,7 +81,7 @@ function loginError(message) {
 
         if (accountValidation(email, pass) == true) {
             const auth = firebase.auth();
-            //Sign In
+            newUser = true;
             const promise = auth.createUserWithEmailAndPassword(email, pass);
             promise.catch(e => loginError(e.message));
         }
@@ -81,9 +89,24 @@ function loginError(message) {
 
     //Add a realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
+        firebaseUserData = firebaseUser;
         if (firebaseUser) {
             console.log(firebaseUser);
-            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
+            if (newUser == true) {
+                db.collection("users").doc(firebaseUser.uid).set({
+                        email: userEmail.value,
+                        username: "",
+                        membership: "default",
+                        searchHistory: [],
+                        age: 20
+                    }).then(function() {
+                        console.log("Document Account Successfully Created!");
+                        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
+                    })
+                    .catch(function(error) {
+                        console.error("Error writing document: ", error);
+                    });
+            }
         } else {
             console.log("not logged in");
         }

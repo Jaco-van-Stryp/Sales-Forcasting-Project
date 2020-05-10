@@ -101,19 +101,19 @@ function loginError(message) {
                         searchHistory: [], //TODO store search history
                         permissionCodes: [], //A list of codes that the user has permitions to, can be checked by aditional code to future proof
                         age: "N/A", //TODO capture Age
-                        gender = "N/A", //TODO Capture Gender
-                        preferedTheme = "dark", //TODO Capture Theme
-                        regDate = Date.now(), //Stores Reg Date
-                        accountType = "individual", //TODO Capture Accout Type
-                        contactNumber = "N/A", //TODO Capture Phone Num
-                        recoveryEmail = "N/A", //TODO Capture Recovery Email
-                        qualifyFreeTrial = false, //TODO Free Trial
-                        removeAdverts = false, //TODO Set Up Ad's
-                        monthsPaidMember = 0, //TODO Total Months Paid
-                        referalID = firebaseUser.uid, //Stores Referal ID
-                        freeMonths = 0, //TODO Total Months of Membership Type Service Letf
-                        referedUser = false, //TODO Was The User Refered
-                        searchRemain = 10 //TODO Todal searches remaining before payment required
+                        gender: "N/A", //TODO Capture Gender
+                        preferedTheme: "dark", //TODO Capture Theme
+                        regDate: Date.now(), //Stores Reg Date
+                        accountType: "individual", //TODO Capture Accout Type
+                        contactNumber: "N/A", //TODO Capture Phone Num
+                        recoveryEmail: "N/A", //TODO Capture Recovery Email
+                        qualifyFreeTrial: false, //TODO Free Trial
+                        removeAdverts: false, //TODO Set Up Ad's
+                        monthsPaidMember: 0, //TODO Total Months Paid
+                        referalID: firebaseUser.uid, //Stores Referal ID
+                        freeMonths: 0, //TODO Total Months of Membership Type Service Letf
+                        referedUser: false, //TODO Was The User Refered
+                        searchRemain: 10, //TODO Todal searches remaining before payment required
 
                     }).then(function() {
                         console.log("Document Account Successfully Created!");

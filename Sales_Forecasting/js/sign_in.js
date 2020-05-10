@@ -98,7 +98,8 @@ function loginError(message) {
                         email: userEmail.value, //Store User Email
                         username: "N/A", //TODO Store Username
                         membership: "default", //TODO create Membership
-                        searchHistory: [], //TODO store search history 
+                        searchHistory: [], //TODO store search history
+                        permissionCodes: [], //A list of codes that the user has permitions to, can be checked by aditional code to future proof
                         age: "N/A", //TODO capture Age
                         gender = "N/A", //TODO Capture Gender
                         preferedTheme = "dark", //TODO Capture Theme

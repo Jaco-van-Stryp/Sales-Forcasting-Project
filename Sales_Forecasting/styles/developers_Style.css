@@ -40,3 +40,12 @@ div {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
 }
+
+@media screen and (max-width: 1000px) {
+    h1 {
+        font-size: medium;
+    }
+    h2 {
+        font-size: large;
+    }
+}

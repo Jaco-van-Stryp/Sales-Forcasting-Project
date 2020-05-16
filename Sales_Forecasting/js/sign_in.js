@@ -1,3 +1,5 @@
+console.log("Auth - " + getCookie("self_authenticated"))
+
 function loginError(message) {
     console.log(message)
     newUser = false;

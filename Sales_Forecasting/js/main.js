@@ -1,8 +1,8 @@
 const signInBtn = document.getElementById("index_into_men_signin");
-
+console.log("Auth - " + getCookie("self_authenticated"))
 
 if (getCookie("self_authenticated") == "True") {
-    signInBtn.innerHTML = "Authenticating..."
+    signInBtn.innerHTML = "Sign Out"
 }
 
 

@@ -1,5 +1,5 @@
 //FireBase Database 
-
+console.log("Auth - " + getCookie("self_authenticated"))
 var firebaseConfig = {
     apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
     authDomain: "sales-forecasting-prj251.firebaseapp.com",
@@ -10,9 +10,7 @@ var firebaseConfig = {
     appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
     measurementId: "G-KS26CVC8Y2",
 };
-if (getCookie("self_authenticated") == "True") {
-
-} else {
+if (getCookie("self_authenticated") == "True") {} else {
     document.cookie = "prevPage=Payment"
     window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
 }
@@ -29,45 +27,9 @@ const db = firebase.firestore();
 var basicPlan = 5;
 var premiumPlan = 15;
 var fullAccessPlan = 25;
-
-var user = firebase.auth().currentUser;
-if (user) {} else {
-    document.cookie = "prevPage=Payment"
-    window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
-
-}
-var userData = db.collection("users").doc(user.uid);
-
-// Atomically add a new region to the "regions" array field.
-function grantPermitions(level) {
-    var perms = ""
-
-    if (level == "basic") {
-        perms = "basic";
-    } else if (level == "premium") {
-        perms = "premium";
-    } else if (level == "full") {
-        perms = "fullAccess";
-    } else {
-        perms = "unkown_perm"
-    }
-    userData.update({
-        permissionCodes: firebase.firestore.FieldValue.arrayUnion(perms)
-    });
-    userData.update({
-            membership: perms,
-            removeAdverts: true,
-            searchRemain: 100
-        }).then(function() {
-            console.log("Document successfully updated!");
-        })
-        .catch(function(error) {
-            // The document probably doesn't exist.
-            console.error("Error updating document: ", error);
-        });
+var userDetails = null;
 
 
-}
 
 
 //BASIC PLAN
@@ -86,7 +48,7 @@ paypal.Buttons({
         // This function captures the funds from the transaction.
         return actions.order.capture().then(function(details) {
 
-            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
+            grantPermitions("basic")
         });
     }
 }).render('#paypal-basic-button');
@@ -106,10 +68,7 @@ paypal.Buttons({
     onApprove: function(data, actions) {
         // This function captures the funds from the transaction.
         return actions.order.capture().then(function(details) {
-
-            //alert('You Purchased The Premium Plan ' + details.payer.name.given_name);
-            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
-
+            grantPermitions("premium")
         });
     }
 }).render('#paypal-premium-button');
@@ -129,27 +88,10 @@ paypal.Buttons({
     onApprove: function(data, actions) {
         // This function captures the funds from the transaction.
         return actions.order.capture().then(function(details) {
-
-            //alert('You Purchased The Full Access Plan ' + details.payer.name.given_name);
-            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
-
+            grantPermitions("fullAccess")
         });
     }
 }).render('#paypal-fullAccess-button');
-
-
-
-
-
-//Firebase Permition Authentican Code!
-function FirebaseGivePerm(permCode) {
-
-}
-
-
-
-
-
 
 
 function getCookie(cname) {
@@ -166,4 +108,64 @@ function getCookie(cname) {
         }
     }
     return "";
+}
+var userData = null;
+
+firebase.auth().onAuthStateChanged(firebaseUser => {
+    if (firebaseUser) {
+        userData = db.collection("users").doc(firebaseUser.uid);
+
+    } else {
+        document.cookie = "self_authenticated=False"
+        document.cookie = "prevPage=Payment"
+        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+
+    }
+});
+
+function grantPermitions(level) {
+    var perms = ""
+
+    if (level == "basic") {
+        perms = "basic";
+    } else if (level == "premium") {
+        perms = "premium";
+    } else if (level == "full") {
+        perms = "fullAccess";
+    } else {
+        perms = "unkown_perm"
+    }
+
+    firebase.auth().onAuthStateChanged(firebaseUser => {
+        if (firebaseUser) {
+            userData = db.collection("users").doc(firebaseUser.uid);
+            userData.update({
+                    membership: level + "",
+                    permissionCodes: firebase.firestore.FieldValue.arrayUnion(perms),
+                    removeAdverts: true,
+                    searchRemain: 100,
+                    monthPurchased: Date.now()
+                }).then(function() {
+                    paymentRedirect();
+                })
+                .catch(function(error) {
+                    // The document probably doesn't exist.
+                    console.error("Error updating document: ", error);
+
+                });
+        } else {
+            document.cookie = "self_authenticated=False"
+            document.cookie = "prevPage=Payment"
+            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+
+        }
+    });
+
+}
+
+
+
+function paymentRedirect() {
+    //TODO: Update this section to more advanced system
+    // window.location.replace("https://www.jaxifysoftawre.com/Sales_Forecasting");
 }

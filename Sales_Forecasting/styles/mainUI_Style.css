@@ -216,10 +216,12 @@ li {
         margin-right: 7%;
         margin-top: 3%;
     }
-    #index_into_men {
+    #index_into_men,
+    #index_into_men_signin {
+        color: white;
         margin-left: 3%;
         float: right;
-        font-size: 100%;
+        font-size: 150%;
     }
     #index_btn {
         font-size: 150%;

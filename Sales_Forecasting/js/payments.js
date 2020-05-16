@@ -60,8 +60,13 @@ paypal.Buttons({
         return actions.order.create({
             purchase_units: [{
                 amount: {
-                    value: premiumPlan
-                }
+                    value: premiumPlan,
+                    currency_code: "USD"
+                },
+                reference_Id: "PURMEMPREM",
+                description: 'Sales Forecasting - Premium Membership',
+                custom_id: 'Premium001',
+                soft_descriptor: "Premium Membership"
             }]
         });
     },
@@ -125,13 +130,29 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 
 function grantPermitions(level) {
     var perms = ""
-
+    var searches = 0;
     if (level == "basic") {
+
+        membershipLevel = 1
         perms = "basic";
+        searches = 30;
+
     } else if (level == "premium") {
+
+        membershipLevel = 2
+
         perms = "premium";
-    } else if (level == "full") {
+        searches = 100;
+
+
+    } else if (level == "fullAcess") {
+
+        membershipLevel = 3
+
         perms = "fullAccess";
+        searches = 9999999;
+
+
     } else {
         perms = "unkown_perm"
     }
@@ -144,7 +165,8 @@ function grantPermitions(level) {
                     permissionCodes: firebase.firestore.FieldValue.arrayUnion(perms),
                     removeAdverts: true,
                     searchRemain: 100,
-                    monthPurchased: Date.now()
+                    monthPurchased: Date.now(),
+                    membershipLevel: membershipLevel
                 }).then(function() {
                     paymentRedirect();
                 })
@@ -167,5 +189,5 @@ function grantPermitions(level) {
 
 function paymentRedirect() {
     //TODO: Update this section to more advanced system
-    // window.location.replace("https://www.jaxifysoftawre.com/Sales_Forecasting");
+    window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
 }

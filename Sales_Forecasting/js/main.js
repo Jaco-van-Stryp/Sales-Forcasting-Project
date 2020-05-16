@@ -4,7 +4,7 @@ console.log("Auth - " + getCookie("self_authenticated"))
 if (getCookie("self_authenticated") == "True") {
     signInBtn.innerHTML = "Sign Out"
 }
-
+document.cookie = "prevPage=N/A"
 
 //updateExample(); //calling a function
 

@@ -1,6 +1,7 @@
 console.log("Auth - " + getCookie("self_authenticated"))
 
 function loginError(message) {
+    stopLoading();
     console.log(message)
     newUser = false;
     if (message.includes("badly formatted")) {
@@ -19,6 +20,7 @@ function loginError(message) {
         document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>This Email Already Exists, Try Signing In!"
 
     }
+
 
 }
 (function() {
@@ -46,6 +48,7 @@ function loginError(message) {
     const register = document.getElementById('reg_btn');
 
     btnLogin.addEventListener('click', e => {
+        startLoading();
 
         const email = userEmail.value;
         const pass = userPassword.value;
@@ -56,7 +59,6 @@ function loginError(message) {
             const promise = auth.signInWithEmailAndPassword(email, pass);
             promise.catch(e => loginError(e.message));
         }
-
 
     });
     //TODO: Figure out how to do dynamic links and have it actually work
@@ -79,6 +81,8 @@ function loginError(message) {
 
 
     register.addEventListener('click', e => {
+        startLoading();
+
         const email = userEmail.value;
         const pass = userPassword.value;
 
@@ -140,13 +144,18 @@ function loginError(message) {
 }());
 
 function accountValidation(email, pass) {
+
     if (email.includes("@") && email.includes(".") && email.length > 11) {
         if (pass.length > 8) {
             return true;
         } else {
+            stopLoading();
+
             document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Make Sure Your Password Is Atleast 8 Characters Long"
         }
     } else {
+        stopLoading();
+
         document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Follow The Appropriate Email Format<br>email@example.com"
     }
     return false;
@@ -169,6 +178,7 @@ function getCookie(cname) {
 }
 
 function redirect() {
+    startLoading();
     if (getCookie("prevPage") == "Payment") {
         document.cookie = "prevPage=no_value"
 
@@ -183,4 +193,18 @@ function redirect() {
 
         window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/");
     }
+}
+
+stopLoading();
+
+function startLoading() {
+    document.getElementById('loader').style.display = "block";
+    document.getElementById('loading').style.display = "block";
+    document.getElementById('overlay').style.display = "block";
+}
+
+function stopLoading() {
+    document.getElementById('loader').style.display = "none";
+    document.getElementById('loading').style.display = "none";
+    document.getElementById('overlay').style.display = "none";
 }

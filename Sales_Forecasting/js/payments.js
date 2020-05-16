@@ -35,12 +35,17 @@ var userDetails = null;
 //BASIC PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
-        // This function sets up the details of the transaction, including the amount and line item details.
+        startLoading()
+            // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
                 amount: {
                     value: basicPlan
-                }
+                },
+                reference_Id: "PURMEMBASIC",
+                description: 'Sales Forecasting - Basic Membership',
+                custom_id: 'Basic001',
+                soft_descriptor: "Basic Membership"
             }]
         });
     },
@@ -50,13 +55,17 @@ paypal.Buttons({
 
             grantPermitions("basic")
         });
+    },
+    onCancel: function(data) {
+        stopLoading();
     }
 }).render('#paypal-basic-button');
 
 //PREMIUM PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
-        // This function sets up the details of the transaction, including the amount and line item details.
+        startLoading()
+            // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
                 amount: {
@@ -75,18 +84,26 @@ paypal.Buttons({
         return actions.order.capture().then(function(details) {
             grantPermitions("premium")
         });
+    },
+    onCancel: function(data) {
+        stopLoading();
     }
 }).render('#paypal-premium-button');
 
 //FULL ACCESS PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
-        // This function sets up the details of the transaction, including the amount and line item details.
+        startLoading()
+            // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
                 amount: {
                     value: fullAccessPlan
-                }
+                },
+                reference_Id: "PURMEMFULL",
+                description: 'Sales Forecasting - Full Access Membership',
+                custom_id: 'FullAccess001',
+                soft_descriptor: "Full Access Membership"
             }]
         });
     },
@@ -95,6 +112,9 @@ paypal.Buttons({
         return actions.order.capture().then(function(details) {
             grantPermitions("fullAccess")
         });
+    },
+    onCancel: function(data) {
+        stopLoading();
     }
 }).render('#paypal-fullAccess-button');
 
@@ -159,6 +179,7 @@ function grantPermitions(level) {
     }
 
     firebase.auth().onAuthStateChanged(firebaseUser => {
+
         if (firebaseUser) {
             userData = db.collection("users").doc(firebaseUser.uid);
             userData.update({
@@ -166,7 +187,7 @@ function grantPermitions(level) {
                     permissionCodes: firebase.firestore.FieldValue.arrayUnion(perms),
                     removeAdverts: true,
                     searchRemain: 100,
-                    monthPurchased: Date.now(),
+                    datePurchased: Date.now(),
                     membershipLevel: membershipLevel
                 }).then(function() {
                     paymentRedirect();
@@ -189,6 +210,21 @@ function grantPermitions(level) {
 
 
 function paymentRedirect() {
-    //TODO: Update this section to more advanced system
+    startLoading()
+        //TODO: Update this section to more advanced system
     window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
+}
+
+stopLoading();
+
+function startLoading() {
+    document.getElementById('loader').style.display = "block";
+    document.getElementById('loading').style.display = "block";
+    document.getElementById('overlay').style.display = "block";
+}
+
+function stopLoading() {
+    document.getElementById('loader').style.display = "none";
+    document.getElementById('loading').style.display = "none";
+    document.getElementById('overlay').style.display = "none";
 }

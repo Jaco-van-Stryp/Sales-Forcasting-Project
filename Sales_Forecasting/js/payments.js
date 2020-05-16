@@ -131,6 +131,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
 function grantPermitions(level) {
     var perms = ""
     var searches = 0;
+    membershipLevel = 0;
     if (level == "basic") {
 
         membershipLevel = 1
@@ -145,7 +146,7 @@ function grantPermitions(level) {
         searches = 100;
 
 
-    } else if (level == "fullAcess") {
+    } else if (level == "fullAccess") {
 
         membershipLevel = 3
 

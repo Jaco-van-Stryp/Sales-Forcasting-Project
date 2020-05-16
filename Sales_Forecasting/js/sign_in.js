@@ -92,6 +92,7 @@ function loginError(message) {
     firebase.auth().onAuthStateChanged(firebaseUser => {
         firebaseUserData = firebaseUser;
         if (firebaseUser) {
+
             console.log(firebaseUser);
             if (newUser == true) {
                 db.collection("users").doc(firebaseUser.uid).set({
@@ -117,15 +118,20 @@ function loginError(message) {
 
                     }).then(function() {
                         console.log("Document Account Successfully Created!");
-                        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
+                        redirect();
+
                     })
                     .catch(function(error) {
                         console.error("Error writing document: ", error);
                     });
             } else {
-                window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
+                redirect();
+                document.cookie = "self_authenticated=True"
+
             }
         } else {
+            document.cookie = "self_authenticated=False"
+
             console.log("not logged in");
         }
     });
@@ -142,4 +148,37 @@ function accountValidation(email, pass) {
         document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Follow The Appropriate Email Format<br>email@example.com"
     }
     return false;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function redirect() {
+    if (getCookie("prevPage") == "Payment") {
+        document.cookie = "prevPage=no_value"
+
+        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/membership.html");
+    } else if (getCookie("prevPage") == "Profile") {
+        document.cookie = "prevPage=no_value"
+
+        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/profile.html");
+
+    } else {
+        document.cookie = "prevPage=no_value"
+
+        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/");
+    }
 }

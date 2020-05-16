@@ -2,13 +2,29 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Ensures optimal rendering on mobile devices. -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Optimal Internet Explorer compatibility -->
     <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
+
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
 
     <link rel="stylesheet" href="styles/membership.css" />
     <title>Jaxify Software - Shop</title>
 </head>
 
 <body>
+    <script src="https://www.paypal.com/sdk/js?client-id=AW7qyLhvr--oVLK_GuWzPTH0Ix46U8wRPsIv6U2DIYSPed-fkjko8V9wvi6MstJpFHDYXAAKRaiKXc49"></script>
+    <script src="js/payments.js"></script>
+
     <img id="index_introduction_logo" src="Resources/Logo.webp" />
 
     <a href="index.html">
@@ -21,7 +37,7 @@
         </h1>
         <!--creating the free membership-->
         <section id="free">
-            <h1>Free</h1>
+            <h1 id="BasicPlan">Basic<br />$5 USD</h1>
 
             <p>Gives you the following:</p>
             <ul>
@@ -33,13 +49,14 @@
             </ul>
 
             <br />
-            <button>Sign Me Up!</button>
+            <div id="paypal-basic-button"></div>
+
             <br />
         </section>
         <br />
         <!--creating the Premium membership-->
         <section id="Premium">
-            <h1>Premium</h1>
+            <h1 id="PremiumcPlan">Premium<br />$15 USD</h1>
 
             <p>Gives you the following:</p>
             <ul>
@@ -51,13 +68,13 @@
             </ul>
 
             <br />
-            <button>Sign Me Up!</button>
+            <div id="paypal-premium-button"></div>
             <br />
         </section>
         <br />
         <!--creating the VIP membership-->
         <section id="VIP">
-            <h1>VIP</h1>
+            <h1 id="FullAcess">Full Access<br />$25 USD</h1>
             <p>Gives you the following:</p>
             <ul>
                 <li>Unlimited searches per month.</li>
@@ -68,7 +85,7 @@
             </ul>
 
             <br />
-            <button>Sign Me Up!</button>
+            <div id="paypal-fullAccess-button"></div>
             <br />
         </section>
     </section>

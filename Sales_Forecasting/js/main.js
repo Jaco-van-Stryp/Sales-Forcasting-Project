@@ -1,3 +1,11 @@
+const signInBtn = document.getElementById("index_into_men_signin");
+
+
+if (getCookie("self_authenticated") == "True") {
+    signInBtn.innerHTML = "Authenticating..."
+}
+
+
 //updateExample(); //calling a function
 
 //Public Variables
@@ -26,17 +34,7 @@ function searchDatabase() {
     storeSearchQuery(searchValue)
 }
 
-//Function plays an animation while searching
-function searchAnimation() {
-    document.getElementById("index_search_input").style.pointerEvents = "none";
-    setTimeout(() => {
-        document.getElementById("index_search_input").style.pointerEvents = "all";
-        document.getElementById("index_search_input").value = "";
-    }, 5000)
-    document.getElementById("index_search_input").value = "Please Wait, Searching..."
 
-
-}
 //Function to store the search query
 function storeSearchQuery(query) {
     var mainData = "searchQuery=" + query
@@ -74,7 +72,7 @@ function loginError(message) {
     firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
-    const signInBtn = document.getElementById("index_into_men_signin");
+
 
     signInBtn.addEventListener('click', e => {
         if (signedIn == true) {
@@ -96,11 +94,30 @@ function loginError(message) {
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
             console.log(firebaseUser);
+            document.cookie = "self_authenticated=True"
             signInBtn.innerHTML = "Sign Out";
             signedIn = true;
         } else {
+            document.cookie = "self_authenticated=False"
             console.log("not logged in");
+            signInBtn.innerHTML = "Sign In"
             signedIn = false;
         }
     });
 }());
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}

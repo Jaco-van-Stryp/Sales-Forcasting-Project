@@ -1,5 +1,7 @@
 body {
     background-image: url("../Resources/background.webp");
+    background-repeat: repeat;
+    background-size: contain;
 }
 
 

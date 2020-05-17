@@ -5,19 +5,19 @@ function loginError(message) {
     console.log(message)
     newUser = false;
     if (message.includes("badly formatted")) {
-        document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Follow The Appropriate Email Format<br>email@example.com"
+        document.getElementById('signin_main_lable').innerHTML = "Please Follow The Appropriate Email Format<br>email@example.com"
 
     }
     if (message.includes("There is no user record corresponding to this identifier. The user may have been deleted.")) {
-        document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Your Account Does Not Exist Yet, Feel Free To Click The Register Button To Join Our Website!"
+        document.getElementById('signin_main_lable').innerHTML = "Your Account Does Not Exist Yet, Feel Free To Click The Register Button To Join Our Website!"
 
     }
     if (message.includes("The password is invalid")) {
-        document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Make Sure You Entered The Correct Email & Password!"
+        document.getElementById('signin_main_lable').innerHTML = "Please Make Sure You Entered The Correct Email & Password!"
 
     }
     if (message.includes("already in use")) {
-        document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>This Email Already Exists, Try Signing In!"
+        document.getElementById('signin_main_lable').innerHTML = "This Email Already Exists, Try Signing In!"
 
     }
 
@@ -151,12 +151,12 @@ function accountValidation(email, pass) {
         } else {
             stopLoading();
 
-            document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Make Sure Your Password Is Atleast 8 Characters Long"
+            document.getElementById('signin_main_lable').innerHTML = "Please Make Sure Your Password Is Atleast 8 Characters Long"
         }
     } else {
         stopLoading();
 
-        document.getElementById('signin_main_lable').innerHTML = "Good Day!<br><br>Please Follow The Appropriate Email Format<br>email@example.com"
+        document.getElementById('signin_main_lable').innerHTML = "Please Follow The Appropriate Email Format<br>email@example.com"
     }
     return false;
 }

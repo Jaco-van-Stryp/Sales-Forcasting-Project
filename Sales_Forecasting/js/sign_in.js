@@ -1,4 +1,4 @@
-console.log("Auth - " + getCookie("self_authenticated"))
+//console.log("Auth - " + getCookie("self_authenticated"))
 
 function loginError(message) {
     stopLoading();
@@ -99,7 +99,7 @@ function loginError(message) {
         firebaseUserData = firebaseUser;
         if (firebaseUser) {
 
-            console.log(firebaseUser);
+            // console.log(firebaseUser);
             if (newUser == true) {
                 db.collection("users").doc(firebaseUser.uid).set({
                         email: userEmail.value, //Store User Email
@@ -123,12 +123,12 @@ function loginError(message) {
                         searchRemain: 10, //TODO Todal searches remaining before payment required
 
                     }).then(function() {
-                        console.log("Document Account Successfully Created!");
+                        // console.log("Document Account Successfully Created!");
                         redirect();
 
                     })
                     .catch(function(error) {
-                        console.error("Error writing document: ", error);
+                        //  console.error("Error writing document: ", error);
                     });
             } else {
                 redirect();
@@ -138,7 +138,7 @@ function loginError(message) {
         } else {
             document.cookie = "self_authenticated=False"
 
-            console.log("not logged in");
+            //   console.log("not logged in");
         }
     });
 }());

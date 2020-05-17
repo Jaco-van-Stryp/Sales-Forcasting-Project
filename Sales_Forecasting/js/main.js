@@ -1,5 +1,5 @@
 const signInBtn = document.getElementById("index_into_men_signin");
-console.log("Auth - " + getCookie("self_authenticated"))
+//console.log("Auth - " + getCookie("self_authenticated"))
 
 if (getCookie("self_authenticated") == "True") {
     signInBtn.innerHTML = "Sign Out"
@@ -43,9 +43,9 @@ function storeSearchQuery(query) {
 
 //Function to retrieve the name for the query
 function writeSearchName() {
-    console.log(document.cookie)
+    // console.log(document.cookie)
     var info = document.getElementById('results_query').value
-    console.log(info)
+        //   console.log(info)
 }
 
 function SignIn() {
@@ -78,7 +78,7 @@ function loginError(message) {
         if (signedIn == true) {
             firebase.auth().signOut().then(function() {
                 window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
-                console.log("Signed Out")
+                // console.log("Signed Out")
             }).catch(function(error) {
                 alert.window.log("Could Not Sign You Out")
             });
@@ -93,13 +93,13 @@ function loginError(message) {
     //Realtime listener
     firebase.auth().onAuthStateChanged(firebaseUser => {
         if (firebaseUser) {
-            console.log(firebaseUser);
+            //   console.log(firebaseUser);
             document.cookie = "self_authenticated=True"
             signInBtn.innerHTML = "Sign Out";
             signedIn = true;
         } else {
             document.cookie = "self_authenticated=False"
-            console.log("not logged in");
+                //  console.log("not logged in");
             signInBtn.innerHTML = "Sign In"
             signedIn = false;
         }

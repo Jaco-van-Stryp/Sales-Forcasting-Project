@@ -1,5 +1,4 @@
 //FireBase Database 
-console.log("Auth - " + getCookie("self_authenticated"))
 var firebaseConfig = {
     apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
     authDomain: "sales-forecasting-prj251.firebaseapp.com",
@@ -36,6 +35,7 @@ var userDetails = null;
 //BASIC PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
+        fillBackground(1);
         // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
@@ -58,15 +58,21 @@ paypal.Buttons({
     },
     onCancel: function(data) {
         stopLoading();
+        deFillBackground();
+
     },
     onAuthorize: function(data, actions) {
         startLoading();
+        deFillBackground();
+
     },
 }).render('#paypal-basic-button');
 
 //PREMIUM PLAN
 paypal.Buttons({
+
     createOrder: function(data, actions) {
+        fillBackground(2);
         // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
@@ -89,15 +95,21 @@ paypal.Buttons({
     },
     onCancel: function(data) {
         stopLoading();
+        deFillBackground();
+
+
     },
     onAuthorize: function(data, actions) {
         startLoading();
+        deFillBackground();
+
     },
 }).render('#paypal-premium-button');
 
 //FULL ACCESS PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
+        fillBackground(3);
         // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
@@ -124,9 +136,13 @@ paypal.Buttons({
     },
     onCancel: function(data) {
         stopLoading();
+        deFillBackground();
+
+
     },
     onAuthorize: function(data, actions) {
         startLoading();
+        deFillBackground();
     },
 }).render('#paypal-fullAccess-button');
 
@@ -223,7 +239,9 @@ function grantPermitions(level) {
 
 function paymentRedirect() {
     startLoading()
-        //TODO: Update this section to more advanced system
+    deFillBackground()
+
+    //TODO: Update this section to more advanced system
     window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
 }
 
@@ -243,4 +261,22 @@ function stopLoading() {
     document.getElementById('loader').style.display = "none";
     document.getElementById('loading').style.display = "none";
     document.getElementById('overlay').style.display = "none";
+    deFillBackground()
+}
+
+function fillBackground(numValue) {
+    var style = document.createElement('style');
+    document.head.appendChild(style);
+    style.sheet.insertRule('#autobackfill' + numValue + ' {color: white; background-color: rgba(0, 0, 0, 5);');
+
+
+
+}
+
+function deFillBackground() {
+    var style = document.createElement('style');
+    document.head.appendChild(style);
+    style.sheet.insertRule('#autobackfill1, #autobackfill2, #autobackfill3 {color: white; background-color: rgba(0, 0, 0, 0);');
+
+
 }

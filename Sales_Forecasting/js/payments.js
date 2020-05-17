@@ -15,6 +15,7 @@ if (getCookie("self_authenticated") == "True") {} else {
     window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
 }
 
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
@@ -35,8 +36,7 @@ var userDetails = null;
 //BASIC PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
-        startLoading()
-            // This function sets up the details of the transaction, including the amount and line item details.
+        // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
                 amount: {
@@ -58,14 +58,16 @@ paypal.Buttons({
     },
     onCancel: function(data) {
         stopLoading();
-    }
+    },
+    onAuthorize: function(data, actions) {
+        startLoading();
+    },
 }).render('#paypal-basic-button');
 
 //PREMIUM PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
-        startLoading()
-            // This function sets up the details of the transaction, including the amount and line item details.
+        // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
                 amount: {
@@ -87,14 +89,16 @@ paypal.Buttons({
     },
     onCancel: function(data) {
         stopLoading();
-    }
+    },
+    onAuthorize: function(data, actions) {
+        startLoading();
+    },
 }).render('#paypal-premium-button');
 
 //FULL ACCESS PLAN
 paypal.Buttons({
     createOrder: function(data, actions) {
-        startLoading()
-            // This function sets up the details of the transaction, including the amount and line item details.
+        // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
             purchase_units: [{
                 amount: {
@@ -103,7 +107,12 @@ paypal.Buttons({
                 reference_Id: "PURMEMFULL",
                 description: 'Sales Forecasting - Full Access Membership',
                 custom_id: 'FullAccess001',
-                soft_descriptor: "Full Access Membership"
+                soft_descriptor: "Full Access Membership",
+                experience: {
+                    input_fields: {
+                        no_shipping: 1
+                    }
+                }
             }]
         });
     },
@@ -115,7 +124,10 @@ paypal.Buttons({
     },
     onCancel: function(data) {
         stopLoading();
-    }
+    },
+    onAuthorize: function(data, actions) {
+        startLoading();
+    },
 }).render('#paypal-fullAccess-button');
 
 
@@ -216,6 +228,10 @@ function paymentRedirect() {
 }
 
 stopLoading();
+(function() {
+    document.getElementsByClassName('paypal-button-number-0').addEventListener('click', e => { startLoading() });
+
+})
 
 function startLoading() {
     document.getElementById('loader').style.display = "block";

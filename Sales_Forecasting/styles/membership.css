@@ -1,15 +1,52 @@
 body {
-    background-size: cover;
     background-image: url("../Resources/background.webp");
-    background-color: RGB(28, 24, 24);
-    /*TODO - Change at a later stage*/
-    /*Margin to remove unneccecary space*/
-    margin: 0;
+}
+
+.home-btn {
+    text-align: right;
+    font-size: x-large;
     color: white;
-    background-attachment: fixed;
-    user-select: none;
-    font-size: 120%;
-    font-family: "Oswald", sans-serif;
+    list-style: none;
+}
+
+
+/*
+.my-container {
+    border: 1px solid green;
+}
+
+.my-row {
+    border: 3px solid red;
+}
+
+.my-col {
+    border: 3px solid blue;
+}
+
+*/
+
+
+/*
+    Custom CSS
+*/
+
+.fronttext {
+    text-align: center;
+}
+
+.shopping_part {
+    margin-top: 5%;
+}
+
+
+/*
+    The following CSS is to display a loading annimation
+*/
+
+.cus-border {
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 30px;
 }
 
 #loader {
@@ -29,18 +66,6 @@ body {
     -webkit-animation: spin 2s linear infinite;
     animation: spin 2s linear infinite;
     z-index: 3;
-}
-
-#loading {
-    position: fixed;
-    color: white;
-    left: 43.5%;
-    font-size: 300%;
-    top: 25%;
-    z-index: 1;
-    width: 150px;
-    z-index: 2;
-    height: 150px;
 }
 
 #overlay {
@@ -70,87 +95,4 @@ body {
     100% {
         transform: rotate(360deg);
     }
-}
-
-section {
-    text-align: center;
-    padding-top: 1%;
-    padding-bottom: 2%;
-    border-color: white;
-    margin-bottom: 3%;
-}
-
-h1 {
-    text-align: center;
-    font-size: 170%;
-    margin-top: 8%;
-    margin-left: 20%;
-    margin-right: 20%;
-}
-
-#free {
-    margin-left: 5%;
-    margin-right: 70%;
-    margin-top: 6%;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 30px;
-    position: absolute;
-}
-
-#Premium {
-    margin-left: 35%;
-    margin-right: 40%;
-    margin-top: 5%;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 30px;
-    position: absolute;
-}
-
-#VIP {
-    margin-left: 65%;
-    margin-right: 10%;
-    margin-top: 4%;
-    border-width: 3px;
-    border-style: solid;
-    border-radius: 30px;
-    position: absolute;
-}
-
-button {
-    letter-spacing: 3px;
-    font-size: 150%;
-    border-radius: 50px;
-    padding: 1%;
-    text-align: center;
-    border-style: solid;
-    border-width: 4px;
-    font-weight: bold;
-    font-family: "Oswald", sans-serif;
-}
-
-button:hover {
-    background-color: coral;
-}
-
-#index_introduction_logo {
-    width: 20%;
-    margin-top: 1.5%;
-    margin-left: 5%;
-    position: absolute;
-}
-
-#main_menu {
-    color: white;
-    margin-left: 0%;
-    float: right;
-    font-size: 120%;
-    list-style: none;
-    padding-right: 10%;
-    padding-top: 2%;
-}
-
-#main_menu:hover {
-    text-decoration: underline;
 }

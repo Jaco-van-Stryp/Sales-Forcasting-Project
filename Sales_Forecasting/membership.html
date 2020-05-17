@@ -2,18 +2,13 @@
 <html>
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <!-- Ensures optimal rendering on mobile devices. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <!-- Optimal Internet Explorer compatibility -->
+
     <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
 
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
-
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
-
-    <!-- Add Firebase products that you want to use -->
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
 
@@ -22,78 +17,106 @@
 </head>
 
 <body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
     <div id="overlay"></div>
-    <div id="loading">Loading</div>
+    <div id="loading"></div>
 
     <div id="loader"></div>
 
     <script src="https://www.paypal.com/sdk/js?client-id=ASv4V8zGf5ZeNTdr472NePQDCgE9ZLWgib0EaVJKT7HX6yuXlMBfL76kM0-qjgzoiqmSgPo2Ym1Y1oIF"></script>
     <script src="js/payments.js"></script>
 
-    <img id="index_introduction_logo" src="Resources/Logo.webp" />
+    <!--START Bootstrap Method Of Implemetation-->
 
-    <a href="index.html">
-        <li id="main_menu">Home</li>
-    </a>
+    <div class="container-fluid my-container text-white">
+        <div class="row my-row">
+            <div class="col-5 my-col">
+                <img class="w-100" src="Resources/Logo.webp" />
+            </div>
+            <div class="col home-btn my-col mr-5 mt-5">
+                <a href="index.html" class="text-white">
+                    <li>Home</li>
+                </a>
+            </div>
+        </div>
+        <div class="row my-row ">
+            <div class="col fronttext my-col mt-4">
+                <h1>Jaxify Software</h1>
+            </div>
+        </div>
+        <div class="row my-row fronttext">
+            <div class="col">
+                <h3>Sales Forecasting Offers Various Paid For Packages For Your Convienience</h3>
+            </div>
+        </div>
+        <div class="row my-row fronttext">
+            <div class="col">
+                <h3>Which One Is Right For You?</h3>
+            </div>
+        </div>
+    </div>
 
-    <section>
-        <h1>
-            Jaxify Software Sales Forecasting Offers Various Paid For Packages For Your Convienience, Which One Is Right For You?
-        </h1>
-        <!--creating the free membership-->
-        <section id="free">
-            <h1 id="BasicPlan">Basic<br />$5 USD</h1>
+    <div class="contaner my-container text-white text-center col-{breakpoint}-auto  ml-5 mr-5 shopping_part">
+        <div class="row">
+            <div class="col-md cus-border ml-3 mb-5">
 
-            <p>Gives you the following:</p>
-            <ul>
-                <li>Up to 100 free searches.</li>
-                <li>Store up to 150 search results in your profile.</li>
-                <li>Something else that involves something else</li>
-                <li>Something else</li>
-                <li>Something else that involves something else again</li>
-            </ul>
+                <h1 id="BasicPlan" class="mt-2">Basic<br />$5 USD</h1>
 
-            <br />
-            <div id="paypal-basic-button"></div>
+                <p>Gives you the following:</p>
+                <ul class="list-unstyled">
+                    <li>Up to 100 free searches.</li>
+                    <li>Store up to 150 search results in your profile.</li>
+                    <li>Something else that involves something else</li>
+                    <li>Something else</li>
+                    <li>Something else that involves something else again</li>
+                </ul>
 
-            <br />
-        </section>
-        <br />
-        <!--creating the Premium membership-->
-        <section id="Premium">
-            <h1 id="PremiumcPlan">Premium<br />$15 USD</h1>
+                <br />
+                <div id="paypal-basic-button"></div>
 
-            <p>Gives you the following:</p>
-            <ul>
-                <li>Up to 500 searches per month.</li>
-                <li>Store up to 1000 search results in your profile.</li>
-                <li>On hand assistance with problems and queries.</li>
-                <li>Free of advertisments.</li>
-                <li>Something else that involves something else again</li>
-            </ul>
+                <br />
+            </div>
+            <div class="col-md cus-border ml-3 mb-5">
+                <h1 id="PremiumcPlan" class="mt-2">Premium<br />$15 USD</h1>
 
-            <br />
-            <div id="paypal-premium-button"></div>
-            <br />
-        </section>
-        <br />
-        <!--creating the VIP membership-->
-        <section id="VIP">
-            <h1 id="FullAcess">Full Access<br />$25 USD</h1>
-            <p>Gives you the following:</p>
-            <ul>
-                <li>Unlimited searches per month.</li>
-                <li>Unlimited storage for your search results.</li>
-                <li>On hand assistance with problems and queries.</li>
-                <li>Free of advertisments.</li>
-                <li>Access to graphs and charts form your search results.</li>
-            </ul>
+                <p>Gives you the following:</p>
+                <ul class="list-unstyled">
+                    <li>Up to 500 searches per month.</li>
+                    <li>Store up to 1000 search results in your profile.</li>
+                    <li>On hand assistance with problems and queries.</li>
+                    <li>Free of advertisments.</li>
+                    <li>Something else that involves something else again</li>
+                </ul>
 
-            <br />
-            <div id="paypal-fullAccess-button"></div>
-            <br />
-        </section>
-    </section>
+                <br />
+                <div id="paypal-premium-button"></div>
+                <br /></div>
+            <div class="col-md cus-border ml-3 mb-5">
+                <section id="VIP">
+                    <h1 id="FullAcess" class="mt-2">Full Access<br />$25 USD</h1>
+                    <p>Gives you the following:</p>
+                    <ul class="list-unstyled">
+                        <li>Unlimited searches per month.</li>
+                        <li>Unlimited storage for your search results.</li>
+                        <li>On hand assistance with problems and queries.</li>
+                        <li>Free of advertisments.</li>
+                        <li>Access to graphs and charts form your search results.</li>
+                    </ul>
+
+                    <br />
+                    <div id="paypal-fullAccess-button"></div>
+                    <br /></div>
+        </div>
+
+    </div>
+    </div>
+    </div>
+
+    <!--End Bootstrap Method Of Implemetation-->
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 
 </html>

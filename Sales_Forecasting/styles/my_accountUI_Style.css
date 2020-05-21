@@ -19,6 +19,8 @@ body {
     text-align: center;
 }
 
+
+/*ENABLE THIS WHEN YOU WANT TO SEE BORDERS
 .my-container {
     border: 1px solid green;
 }
@@ -30,6 +32,7 @@ body {
 .my-col {
     border: 3px solid blue;
 }
+*/
 
 .data_value {
     /* properties of the text fields */

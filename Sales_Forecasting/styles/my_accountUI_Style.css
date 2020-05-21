@@ -1,0 +1,17 @@
+body {
+    background-image: url("../Resources/background.webp");
+}
+.home-btn {
+    text-align: right;
+    font-size: x-large;
+    color: white;
+    list-style: none;
+}
+.cus-border {
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 30px;
+}
+.fronttext {
+    text-align: center;
+}

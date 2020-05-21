@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<link rel="stylesheet" href="styles/my_accountUI_Style.css" />
+</head>
+
+<body>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+
+    <div class="container-fluid my-container text-white">
+        <div class="row my-row">
+            <div class="col-5 my-col">
+                <img class="w-100" src="Resources/Logo.webp" />
+            </div>
+            <div class="col home-btn my-col mr-5 mt-5">
+                <a href="index.html" class="text-white">
+                    <li>Home</li>
+                </a>
+            </div>
+        </div>
+       
+
+        <div class="row my-row ">
+            <div class="col fronttext my-col mt-4">
+                <h1>Welcome user</h1>
+            </div>
+        </div>
+        <div class="row my-row fronttext">
+            <div class="col">
+                <h3>Manage your info, privacy, and security to make Jaxify Software work better for you.</h3>
+            </div>
+        </div>
+        <div class="row my-row fronttext">
+            <div class="col">
+                <h5>Please enter the information that you would like to change and then press the submit button below.</h5>
+            </div>
+        </div>
+
+        <div class="input-group">
+            <div class="col-xs-4">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
+          </div>
+          <div class="input-group">
+            <div class="col-xs-4">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
+          </div>
+           
+            <label class="radio-inline" id="radio"><input type="radio" name="optradio" >Individual Account</label>
+            <label class="radio-inline"id="radio" ><input type="radio" name="optradio" >Business Account</label>
+          
+           
+            
+            <label class="radio" id="radio"><input type="radio" name="optradio" >Dark Theme</label>
+            <label class="radio-inline"id="radio" ><input type="radio" name="optradio" >Normal Theme</label>
+            <label>Type of membership Currently in use:</label>
+            <div class="d-inline p-2 bg-primary text-white">Basic</div>
+              <button type="button" class="btn btn-primary btn-block">Submit</button>
+          
+
+
+</body>
+
+</html>

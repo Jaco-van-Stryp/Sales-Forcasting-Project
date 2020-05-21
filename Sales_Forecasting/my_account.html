@@ -2,7 +2,24 @@
 <html>
 
 <head>
+    <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <title>Sales Forcasting - Sign In</title>
     <link rel="stylesheet" href="styles/my_accountUI_Style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 
 <body>
@@ -90,6 +107,61 @@
                 </div>
             </div>
         </div>
+
+        <!-- TODO: @Freislich Continue ABOVE THIS COMMENT - Build The Layout, @Jaco-van-Stryp Will Take Care Of Data Inloading
+       
+       
+            TIPs: 
+            *   Use $VALUE$ (depending on value) to indicate that a value needs to be loaded into this area
+            *   Use Appropriately named ID's in the Specific location where data needs to be loaded in
+            *   Mention those ID Names Next to the values below to make life easier
+            *   For Example:
+                     *   Personal Details [CONTAINER]
+                           *   Name [Editable Input Box] - [ROW COL-MD-3 NAME COL-MD-9] - ID user_first_name
+            *   A colomn can be 12 "blocks" long, you need to set it to Medium (col-md-(value totaling 12)
+        https://getbootstrap.com/docs/4.5/layout/grid/
+        Note - RO Means Read Only
+        Each Subtitle is a CONTAINER-FLUID
+        Each Value is a ROW with the COL-md-X/12 splitting the required data
+        Focus On Quality and a very very similar format to the code above, the code MUST be mobile & desktop compatible
+
+TODO:   Add The Following Container-Fluids, Rows with multiple Columns inside
+        *   Personal Details (This is a container, each below will be 1 row with a column for each "thing" inside, refere to above code)
+            *   Name [Editable Input Box]
+            *   Surname [Editable Input Box]
+            *   Age [Editable Input Box]
+            *   Contact Number [Editable Input Box]
+            *   Update Details [Button]
+        *   Activity Details
+            *   Search History [RO Text Area - They Will Be Listed Underneath Eachother (Be Creative)]
+            *   Registration Date [RO Input Box]
+            *   My Referal Code [RO Input Box]
+            *   Refered User [RO Input Box]
+        *   Membership Details
+            *   Active Membership [RO Input Box]
+            *   Adverts [Toggle Button [Red = Deactivated] [Green = Active] Green By Default]
+            *   Searches Remain [RO Normal Text Value]
+            *   Qualify Free Trial [RO Button [Red = No] [Green = Yes] Green By Default]
+            *   Total Months Paid Member [RO Normal Text Value]
+            *   Upgrade Account [Button [Links To Membership Page]]
+        *   Membership Capibilities (Note - many of these will be hidden/Deactivated based on membership)
+            *   Theme [Toggle Button]
+            *   Graphing [Toggle Button]
+            *   Search History [Toggle Button]
+            *   Search Compare [Editable Input Box 1] [Editable Input Box 2] [Button Search] 
+            *   Activate Free Trial [Button] 
+        *   Account Management
+            *   Recovery Email [Editable Input Box] [Button]
+            *   Disable Account [Button] [Confirmation]
+            *   Enable Account [Button] Confirmation]
+            *   Contact Support [Button]
+        
+        
+        
+        
+        ::END::
+        
+        -->
     </section>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>

@@ -106,27 +106,14 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
-    #reg_btn,
-    #signin_btn {
-        margin-top: 0%;
-        margin-left: 5%;
-        margin-right: 5%;
-        font-size: 100%;
-    }
-    #client_info::placeholder,
-    #password_info::placeholder {
+    .data_value::placeholder {
         font-size: small;
-        padding-left: 2%;
+        padding-left: 1%;
     }
     .home-btn {
         margin-top: 1%;
         margin-right: 1%;
         font-size: small !important;
-    }
-    #client_info,
-    #password_info {
-        font-size: 80% !important;
-        padding-left: 2%;
     }
     h1 {
         font-size: 120% !important;
@@ -135,10 +122,15 @@ body {
         font-size: 80% !important;
     }
     #btns {
-        margin-top: 4%;
+        margin-top: 2%;
     }
     .data_value {
         width: 100%;
+        text-align: center !important;
+    }
+    #user_password_repeat,
+    #user_password_first {
+        margin: 0 !important;
     }
 }
 

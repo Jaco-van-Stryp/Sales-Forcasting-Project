@@ -2,67 +2,99 @@
 <html>
 
 <head>
-
-<link rel="stylesheet" href="styles/my_accountUI_Style.css" />
+    <link rel="stylesheet" href="styles/my_accountUI_Style.css" />
 </head>
 
 <body>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
+    <div id="overlay"></div>
+    <div id="loading">Loading</div>
 
-    <div class="container-fluid my-container text-white">
-        <div class="row my-row">
-            <div class="col-5 my-col">
-                <img class="w-100" src="Resources/Logo.webp" />
+    <div id="loader"></div>
+
+    <section id="pre-hide-wile-load">
+        <div class="container-fluid">
+            <div class="container-fluid my-container text-white">
+                <div class="row my-row">
+                    <div class="col-5 my-col">
+                        <img class="w-100" src="Resources/Logo.webp" />
+                    </div>
+                    <div class="col home-btn my-col mr-5 mt-5">
+                        <a href="index.html" class="text-white">
+                            <li>Home</li>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="row my-row">
+                    <div class="col fronttext my-col mt-4">
+                        <h1 id="replace_username">Welcome [$Rank$] $Username$</h1>
+                        <!--Username and rank will be replaced with a value based of id replace_username-->
+                    </div>
+                </div>
+                <div class="row my-row">
+                    <div class="col">
+                        <h3>
+                            $ACC_TYPE$ Account Settings
+                            <!--Personal/Business-->
+                        </h3>
+                    </div>
+                </div>
             </div>
-            <div class="col home-btn my-col mr-5 mt-5">
-                <a href="index.html" class="text-white">
-                    <li>Home</li>
-                </a>
+
+            <div class="container-fluid text-white">
+                <div class="row">
+                    <div class="col">
+                        <h5>Account Details</h5>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-2 align-self-center my-col fronttext">
+                        E-mail Address
+                    </div>
+                    <div class="col-md-10 align-self-center my-col">
+                        <input class="data_value" id="user_email" type="text" placeholder="E-Mail Address" readonly />
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-2 align-self-center my-col fronttext">
+                        Username
+                    </div>
+                    <div class="col-md-10 align-self-center my-col">
+                        <input class="data_value" id="user_username" type="text" placeholder="Username" readonly />
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-2 align-self-center my-col fronttext">
+                        Update Password
+                    </div>
+                    <div class="col-md-3 align-self-center my-col ml-2">
+                        <input class="data_value w-100" id="user_password_first" type="password" placeholder="Password" />
+                    </div>
+                    <div class="col-md-3 align-self-center my-col ml-2">
+                        <input class="data_value w-100" id="user_password_repeat" type="password" placeholder="Confirm Password" />
+                    </div>
+                    <div class="col-md-3 my-col justify-content-center">
+                        <section id="update_password">
+                            <!--ID For Updating Password-->
+                            <ul id="btns_s" class="list-unstyled">
+                                <a href="#" class="nounderline">
+                                    <li id="btns" class="mt-2">
+                                        Update Password
+                                    </li>
+                                </a>
+                            </ul>
+                        </section>
+                    </div>
+                </div>
             </div>
         </div>
-       
+    </section>
 
-        <div class="row my-row ">
-            <div class="col fronttext my-col mt-4">
-                <h1>Welcome user</h1>
-            </div>
-        </div>
-        <div class="row my-row fronttext">
-            <div class="col">
-                <h3>Manage your info, privacy, and security to make Jaxify Software work better for you.</h3>
-            </div>
-        </div>
-        <div class="row my-row fronttext">
-            <div class="col">
-                <h5>Please enter the information that you would like to change and then press the submit button below.</h5>
-            </div>
-        </div>
-
-        <div class="input-group">
-            <div class="col-xs-4">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-            <input id="email" type="text" class="form-control" name="email" placeholder="Email">
-          </div>
-          <div class="input-group">
-            <div class="col-xs-4">
-            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-            <input id="password" type="password" class="form-control" name="password" placeholder="Password">
-          </div>
-           
-            <label class="radio-inline" id="radio"><input type="radio" name="optradio" >Individual Account</label>
-            <label class="radio-inline"id="radio" ><input type="radio" name="optradio" >Business Account</label>
-          
-           
-            
-            <label class="radio" id="radio"><input type="radio" name="optradio" >Dark Theme</label>
-            <label class="radio-inline"id="radio" ><input type="radio" name="optradio" >Normal Theme</label>
-            <label>Type of membership Currently in use:</label>
-            <div class="d-inline p-2 bg-primary text-white">Basic</div>
-              <button type="button" class="btn btn-primary btn-block">Submit</button>
-          
-
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
 </body>
 
 </html>

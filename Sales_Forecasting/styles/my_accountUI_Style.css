@@ -1,17 +1,160 @@
 body {
     background-image: url("../Resources/background.webp");
 }
+
 .home-btn {
     text-align: right;
     font-size: x-large;
     color: white;
     list-style: none;
 }
+
 .cus-border {
     border-width: 3px;
     border-style: solid;
     border-radius: 30px;
 }
+
 .fronttext {
     text-align: center;
+}
+
+.my-container {
+    border: 1px solid green;
+}
+
+.my-row {
+    border: 3px solid red;
+}
+
+.my-col {
+    border: 3px solid blue;
+}
+
+.data_value {
+    /* properties of the text fields */
+    color: white;
+    background: none;
+    outline: none;
+    text-align: left;
+    letter-spacing: 3px;
+    padding: 1%;
+    border-top-style: none;
+    border-right-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-left: 1%;
+    width: 50%;
+    border-width: 42x;
+    letter-spacing: 1px;
+    font-family: "Oswald", sans-serif;
+    font-size: 80%;
+}
+
+.data_value::placeholder {
+    color: white;
+}
+
+#loader {
+    display: none;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-right: 16px solid #1b5074;
+    border-left: 16px solid #1b5074;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 3;
+}
+
+#overlay {
+    display: none;
+    position: fixed;
+    /* Sit on top of the page content */
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #reg_btn,
+    #signin_btn {
+        margin-top: 0%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 100%;
+    }
+    #client_info::placeholder,
+    #password_info::placeholder {
+        font-size: small;
+        padding-left: 2%;
+    }
+    .home-btn {
+        margin-top: 1%;
+        margin-right: 1%;
+        font-size: small !important;
+    }
+    #client_info,
+    #password_info {
+        font-size: 80% !important;
+        padding-left: 2%;
+    }
+    h1 {
+        font-size: 120% !important;
+    }
+    h2 {
+        font-size: 80% !important;
+    }
+    #btns {
+        margin-top: 4%;
+    }
+    .data_value {
+        width: 100%;
+    }
+}
+
+#btns {
+    color: white;
+    letter-spacing: 1px;
+    border-radius: 50px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    font-size: 100%;
+    padding: 5px;
+}
+
+#btns:hover {
+    background-color: coral;
 }

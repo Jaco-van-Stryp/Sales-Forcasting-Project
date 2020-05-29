@@ -2,22 +2,10 @@ body {
     background-size: cover;
     background-image: url("../Resources/background.webp");
     background-color: RGB(28, 24, 24);
-    /*TODO - Change at a later stage*/
-    /*Margin to remove unneccecary space*/
     margin: 0;
     color: white;
     background-attachment: fixed;
     user-select: none;
-}
-
-h1 {
-    color: white;
-    text-align: center;
-    font-size: 300%;
-}
-
-img {
-    width: 30%;
 }
 
 hr {
@@ -25,27 +13,53 @@ hr {
     margin-right: 20%;
     margin-top: 5%;
     border-radius: 15px;
-    border-style: solid;
+    border-style: solid !important;
     border-color: white;
+    border-top: 3px solid white !important;
 }
 
-h2 {
-    color: white;
+.fronttext {
     text-align: center;
-    font-size: 250%;
+    font-size: 200% !important;
+    color: white;
+}
+
+.home-btn {
+    margin-top: 2%;
+    margin-right: 2%;
+    font-size: x-large !important;
+    text-align: right;
+    font-size: large;
+    color: white;
+    list-style: none;
 }
 
 div {
     text-align: center;
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
+    -webkit-transition: border-radius 1s;
 }
 
-@media screen and (max-width: 1000px) {
-    h1 {
-        font-size: medium;
-    }
-    h2 {
-        font-size: large;
-    }
+a {
+    color: white !important;
+    text-decoration: none !important;
+}
+
+.LI-profile-badge:hover {
+    border-radius: 0 !important;
+}
+
+h2 {
+    text-decoration: underline;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+div:hover {
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    -webkit-transition: border-radius 1s;
 }

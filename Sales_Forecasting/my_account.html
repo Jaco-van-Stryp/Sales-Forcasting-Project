@@ -6,7 +6,7 @@
 
 
 
-    <title>Sales Forcasting - Sign In</title>
+    <title>Sales Forcasting - My Account</title>
     <link rel="stylesheet" href="styles/my_accountUI_Style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -42,7 +42,7 @@
                 </div>
                 <div class="row my-row">
                     <div class="col">
-                        <h3>
+                        <h3 id="acc_type_settings">
                             $ACC_TYPE$ Account Settings
                             <!--Personal/Business-->
                         </h3>
@@ -61,7 +61,7 @@
                         E-mail Address
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <input class="data_value" id="user_email" type="text" placeholder="E-Mail Address" />
+                        <input class="data_value" id="user_email" type="text" placeholder="E-Mail Address" readonly/>
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -87,7 +87,7 @@
                             <!--ID For Updating Password-->
                             <ul id="btns_s" class="list-unstyled">
                                 <a href="#" class="nounderline">
-                                    <li id="btns" class="mt-2">
+                                    <li id="update_password_button" class="mt-2">
                                         Update Password
                                     </li>
                                 </a>
@@ -99,6 +99,11 @@
             <!--TODO: 
                 FOCUS ON ROWS FOR EACH ENTRY AND COLUMNS FOR EACH "ITEM" IN THAT ROW-->
             <div class="container-fluid text-white">
+                <div class="row mt-2">
+                    <div class="col">
+                        <h5>Personal Details</h5>
+                    </div>
+                </div>
                 <div class="row mt-2">
                     <div class="col-md-2 align-self-center my-col fronttext">
                         Name
@@ -120,7 +125,7 @@
                         Age
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <input class="data_value " id="user_name" type="text" placeholder="Age" />
+                        <input class="data_value " id="user_age" type="text" placeholder="Age" />
                     </div>
                 </div>
                 <div class="row mt-2">
@@ -128,39 +133,49 @@
                         Contact Number
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <input class="data_value " id="user_name" type="text" placeholder="Contact Number" />
+                        <input class="data_value " id="user_contact_number" type="text" placeholder="Contact Number" />
                     </div>
                 </div>
             </div>
 
             <div class="container-fluid text-white">
                 <!--Activity Details-->
-                <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Search History</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" readonly></textarea>
+                <div class="row mt-2">
+                    <div class="col">
+                        <h5>Activity details</h5>
+                    </div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-2 align-self-center my-col fronttext">
+                        Search History
+                    </div>
+                    <div class="col-md-10 align-self-center my-col fronttext">
+                        <textarea class="form-control" id="user_search_history" rows="3" readonly></textarea>
+
+                    </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-2 align-self-center my-col fronttext">
                         Registration Date
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <input class="data_value " id="user_name" type="text" placeholder="Registration Date" readonly />
+                        <input class="data_value " id="user_registration_date" type="text" placeholder="Registration Date" readonly />
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-2 align-self-center my-col fronttext">
-                        My Referal Code
+                        My Referral Code
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <input class="data_value " id="user_name" type="text" placeholder="My Referal Code" readonly />
+                        <input class="data_value " id="user_referral_code" type="text" placeholder="My Referal Code" readonly />
                     </div>
                 </div>
                 <div class="row mt-2">
                     <div class="col-md-2 align-self-center my-col fronttext">
-                        Refered User
+                        Referred User
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <input class="data_value " id="user_name" type="text" placeholder="Refered User" readonly />
+                        <input class="data_value " id="user_referedUser" type="text" placeholder="Refered User" readonly />
                     </div>
                 </div>
             </div>
@@ -168,37 +183,41 @@
             <div class="container-fluid text-white">
                 <!--Membership Details-->
                 <div class="row mt-2">
+                    <div class="col">
+                        <h5>Membership Details</h5>
+                    </div>
+                </div>
+                <div class="row mt-2">
                     <div class="col-md-2 align-self-center my-col fronttext">
                         Active Membership
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <input class="data_value " id="user_name" type="text" placeholder="Active Membership" readonly />
+                        <input class="data_value " id="user_membership" type="text" placeholder="Active Membership" readonly />
                     </div>
                     <div class="col-md-2 align-self-center my-col fronttext">
                         Adverts
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <button type="button" class="btn btn-success" autocomplete="on">Active</button>
-                        <button type="button" class="btn btn-danger">Deactivated</button>
+                        <button type="button" class="btn btn-success" id="btn_adverts_active" autocomplete="on">Active</button>
                     </div>
                     <div class="col-md-2 align-self-center my-col fronttext">
                         Searches Remaining
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <p class="text-left">0</p>
+                        <p class="text-left" id="searches_remain">0</p>
                     </div>
                     <div class="col-md-2 align-self-center my-col fronttext">
                         Qualify Free Trial
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <button type="button" class="btn btn-success" autocomplete="on">Yes</button>
-                        <button type="button" class="btn btn-danger">No</button>
+                        <button type="button" class="btn btn-success" id="qft" autocomplete="on">Yes</button>
+
                     </div>
                     <div class="col-md-2 align-self-center my-col fronttext">
                         Total Months paid for membership
                     </div>
                     <div class="col-md-10 align-self-center my-col">
-                        <p class="text-left">0</p>
+                        <p class="text-left" id="tmpfm">0</p>
                     </div>
                     <div class="col-md-2 align-self-center my-col fronttext">
 
@@ -213,7 +232,11 @@
 
             <div class="container-fluid text-white">
                 <!--Membership Capibilities-->
-
+                <div class="row mt-2">
+                    <div class="col">
+                        <h5>Membership Capabilities</h5>
+                    </div>
+                </div>
                 <div class="btn-group btn-group-toggle" data-toggle="buttons">
                     <label class="btn btn-secondary active">
                       <input type="radio" name="options" id="option1" autocomplete="off" checked> Normal Theme
@@ -260,11 +283,16 @@
         <div class="container-fluid text-white">
             <!--Account Management-->
             <div class="row mt-2">
+                <div class="col">
+                    <h5>Account Management</h5>
+                </div>
+            </div>
+            <div class="row mt-2">
                 <div class="col-md-2 align-self-center my-col fronttext">
                     Recovery Email
                 </div>
                 <div class="col-md-10 align-self-center my-col">
-                    <input class="data_value" id="user_name" type="text" placeholder="Recovery Email" />
+                    <input class="data_value" id="user_recovery_email" type="text" placeholder="Recovery Email" />
                     <button type="button" class="btn btn-secondary btn-sm">Update Email</button>
                 </div>
             </div>

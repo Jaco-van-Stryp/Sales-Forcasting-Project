@@ -101,6 +101,13 @@ function loginError(message) {
 
             // console.log(firebaseUser);
             if (newUser == true) {
+
+                var today = new Date();
+                var dd = String(today.getDate()).padStart(2, '0');
+                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+                var yyyy = today.getFullYear();
+
+                today = mm + '/' + dd + '/' + yyyy;
                 db.collection("users").doc(firebaseUser.uid).set({
                         email: userEmail.value, //Store User Email
                         username: "N/A", //TODO Store Username
@@ -110,7 +117,7 @@ function loginError(message) {
                         age: "N/A", //TODO capture Age
                         gender: "N/A", //TODO Capture Gender
                         preferedTheme: "dark", //TODO Capture Theme
-                        regDate: Date.now(), //Stores Reg Date
+                        regDate: today, //Stores Reg Date
                         accountType: "individual", //TODO Capture Accout Type
                         contactNumber: "N/A", //TODO Capture Phone Num
                         recoveryEmail: "N/A", //TODO Capture Recovery Email
@@ -121,6 +128,14 @@ function loginError(message) {
                         freeMonths: 0, //TODO Total Months of Membership Type Service Letf
                         referedUser: false, //TODO Was The User Refered
                         searchRemain: 10, //TODO Todal searches remaining before payment required
+                        name: "N/A",
+                        Surname: "N/A",
+                        contactNumber: "N/A",
+                        graphing: false,
+                        history: false
+
+
+
 
                     }).then(function() {
                         // console.log("Document Account Successfully Created!");

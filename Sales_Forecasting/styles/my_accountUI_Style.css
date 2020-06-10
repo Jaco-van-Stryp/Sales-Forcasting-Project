@@ -124,7 +124,8 @@ body {
     h2 {
         font-size: 80% !important;
     }
-    #btns {
+    #btns,
+    #update_password_button {
         margin-top: 2%;
     }
     .data_value {
@@ -137,7 +138,8 @@ body {
     }
 }
 
-#btns {
+#btns,
+#update_password_button {
     color: white;
     letter-spacing: 1px;
     border-radius: 50px;
@@ -150,7 +152,8 @@ body {
     padding: 5px;
 }
 
-#btns:hover {
+#btns:hover,
+#update_password_button:hover {
     background-color: coral;
 }
 

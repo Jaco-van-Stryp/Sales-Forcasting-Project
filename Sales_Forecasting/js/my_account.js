@@ -92,7 +92,7 @@ function loadDataIntoPage() {
     document.getElementById('user_referral_code').value = referalID
     document.getElementById('user_referedUser').value = referedUser
     document.getElementById('user_membership').value = membership
-    if (removeAdverts == true) {
+    if (removeAdverts == false) {
         document.getElementById('btn_adverts_active').style.backgroundColor = "green"
         document.getElementById('btn_adverts_active').style.borderColor = "green"
         document.getElementById('btn_adverts_active').innerHTML = "Active"

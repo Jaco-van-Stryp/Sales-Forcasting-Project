@@ -2,15 +2,19 @@
 <html lang="en">
 
 <head>
-<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-141187901-3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-141187901-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-141187901-3');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-141187901-3');
+    </script>
 
     <link rel="shortcut icon" type="image/png" href="Sales_Forecasting/Resources/favicon.png" />
 
@@ -182,19 +186,19 @@
                                     <div class="slideshow-container">
 
                                         <!-- Full-width images with number and caption text -->
-                                        <div class="mySlides fade">
+                                        <div class="mySlides">
                                             <div class="numbertext">1 / 3</div>
                                             <img src="slide_02.webp" style="width:100%">
                                             <div class="text">Sales Forecasting Website</div>
                                         </div>
 
-                                        <div class="mySlides fade">
+                                        <div class="mySlides">
                                             <div class="numbertext">2 / 3</div>
                                             <img src="slide_01.webp" style="width:100%;">
                                             <div class="text">Wedding Website</div>
                                         </div>
 
-                                        <div class="mySlides fade">
+                                        <div class="mySlides">
                                             <div class="numbertext">3 / 3</div>
                                             <img src="slide_03.webp" style="width:100%">
                                             <div class="text">Desktop Electronic Voting Software</div>
@@ -215,18 +219,22 @@
                                     <section id="contact" style="margin-top: 3%;">
                                         <h1>Are You Interested?<br>Contact Us!</h1>
                                         <br>
-
-                                        <h2 style="color: red;">Email Address - jacovanstryp@gmail.com<br></h2>
-
-                                        <a href="https://m.me/jaxifysoftware" style="text-decoration: none">
-                                            <h2 style="color: green;">Chat On Messanger<br></h2>
-                                        </a>
-
-                                        <a href="https://www.linkedin.com/in/danielvanstryp/" style="text-decoration: none">
-                                            <h2 style=" color: cornflowerblue; ">Developer LinkedIn Page<br></h2>
-                                        </a>
+                                        <div class="container">
+                                            <div class="card-body">
+                                                <form action="https://formspree.io/xaypjpgv" method="POST">
+                                                    <input type="text" name="name" placeholder="Your Name" class="form-control mb-2 text-center">
+                                                    <input type="email" name="_replyto " placeholder="Your E-Mail Address" class="form-control mb-2 text-center">
+                                                    <textarea rows="7" name="message" placeholder="Your Message To Us" class="form-control text-center"></textarea>
+                                                    <button class="btn btn-success" name="submit">Send Message</button>
+                                                </form>
+                                            </div>
+                                        </div>
                                         <footer>Copyright © Jaxify Software 2020 - Daniël (Jaco) Van Stryp</footer>
                                     </section>
+
+                                    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js " integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo " crossorigin="anonymous "></script>
+                                    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js " integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1 " crossorigin="anonymous "></script>
+                                    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js " integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM " crossorigin="anonymous "></script>
 </body>
 <script src="main.js "></script>
 

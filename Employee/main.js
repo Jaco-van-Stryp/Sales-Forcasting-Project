@@ -9,7 +9,7 @@ function loginError(message) {
 
     }
     if (message.includes("There is no user record corresponding to this identifier. The user may have been deleted.")) {
-        document.getElementById('signin_main_lable').innerHTML = "This Account is not allowed to login!"
+        document.getElementById('signin_main_lable').innerHTML = "Sorry, You are not an employee of Jaxify Software!"
 
     }
     if (message.includes("The password is invalid")) {
@@ -57,74 +57,44 @@ function loginError(message) {
             //Sign In
             const promise = auth.signInWithEmailAndPassword(email, pass);
             promise.catch(e => loginError(e.message));
-        }
 
-    });
+            var auth_role = "";
 
+            firebase.auth().onAuthStateChanged(firebaseUser => {
+                startLoading();
 
+                if (firebaseUser) {
+                    userData = db.collection("employees").doc(firebaseUser.email);
+                    console.log(firebaseUser.email)
+                    userData.get().then(function(doc) {
+                        if (doc.exists) {
+                            auth_role = (doc.get("emp_job"));
+                            if (auth_role == "Director") {
+                                window.location.replace("https://jaxifysoftware.com/employee/management.html");
+                            } else if (auth_role == "Developer") {
+                                window.location.replace("https://jaxifysoftware.com/employee/development.html");
 
-    //Add a realtime listener
-    firebase.auth().onAuthStateChanged(firebaseUser => {
-        firebaseUserData = firebaseUser;
-        if (firebaseUser) {
+                            } else if (auth_role == "Reference") {
+                                window.location.replace("https://jaxifysoftware.com/employee/reference.html");
 
-            // console.log(firebaseUser);
-            if (newUser == true) {
+                            } else if (auth_role == "Project Manager") {
+                                window.location.replace("https://jaxifysoftware.com/employee/projectmanager.html");
 
-                var today = new Date();
-                var dd = String(today.getDate()).padStart(2, '0');
-                var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
-                var yyyy = today.getFullYear();
-
-                today = mm + '/' + dd + '/' + yyyy;
-                db.collection("users").doc(firebaseUser.uid).set({
-                        email: userEmail.value, //Store User Email
-                        username: "N/A", //TODO Store Username
-                        membership: "default", //TODO create Membership
-                        searchHistory: [], //TODO store search history
-                        permissionCodes: [], //A list of codes that the user has permitions to, can be checked by aditional code to future proof
-                        age: "N/A", //TODO capture Age
-                        gender: "N/A", //TODO Capture Gender
-                        preferedTheme: "dark", //TODO Capture Theme
-                        regDate: today, //Stores Reg Date
-                        accountType: "individual", //TODO Capture Accout Type
-                        contactNumber: "N/A", //TODO Capture Phone Num
-                        recoveryEmail: "N/A", //TODO Capture Recovery Email
-                        qualifyFreeTrial: false, //TODO Free Trial
-                        removeAdverts: false, //TODO Set Up Ad's
-                        monthsPaidMember: 0, //TODO Total Months Paid
-                        referalID: firebaseUser.uid, //Stores Referal ID
-                        freeMonths: 0, //TODO Total Months of Membership Type Service Letf
-                        referedUser: false, //TODO Was The User Refered
-                        searchRemain: 10, //TODO Todal searches remaining before payment required
-                        name: "N/A",
-                        Surname: "N/A",
-                        contactNumber: "N/A",
-                        graphing: false,
-                        history: false
-
-
-
-
-                    }).then(function() {
-                        // console.log("Document Account Successfully Created!");
-                        redirect();
-
-                    })
-                    .catch(function(error) {
-                        //  console.error("Error writing document: ", error);
+                            }
+                        } else {
+                            // doc.data() will be undefined in this case
+                            stopLoading();
+                            console.error("Fail")
+                        }
+                    }).catch(function(error) {
+                        console.log("Error getting document:", error);
                     });
-            } else {
-                redirect();
-                document.cookie = "self_authenticated=True"
-
-            }
-        } else {
-            document.cookie = "self_authenticated=False"
-
-            //   console.log("not logged in");
+                } else {
+                    stopLoading();
+                }
+            });
         }
-    });
+    })
 }());
 
 function accountValidation(email, pass) {
@@ -161,23 +131,7 @@ function getCookie(cname) {
     return "";
 }
 
-function redirect() {
-    startLoading();
-    if (getCookie("forwading") == "a4e41cbdef004a7d9a98c83ceb13ffae") {
-        document.cookie = "forwarding=no_value"
 
-        window.location.replace("https://www.jaxifysoftware.com/employee/director.html");
-    } else if (getCookie("prevPage") == "profile_page") {
-        document.cookie = "prevPage=no_value"
-
-        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/my_account.html");
-
-    } else {
-        document.cookie = "prevPage=no_value"
-
-        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/");
-    }
-}
 
 stopLoading();
 

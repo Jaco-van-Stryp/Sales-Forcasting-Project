@@ -24,6 +24,10 @@
 </head>
 
 <body>
+    <div id="overlay"></div>
+    <div id="loading">Loading</div>
+
+    <div id="loader"></div>
     <div class="container-fluid my-container text-white">
         <div class="row my-row">
             <div class="col-5 my-col">
@@ -57,13 +61,13 @@
                         <br />
                         <label for="pwd">Employee Name</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Employee Legal First Name" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Employee Legal First Name" id="emp_name" />
                         <br />
                         <br />
 
                         <label for="pwd">Employee Surname</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Employee Legal Surname" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Employee Legal Surname" id="emp_surname" />
                         <br />
                         <br />
 
@@ -77,24 +81,26 @@
 
                         <label for="pwd">Payment Persentage between</label>
                         <br />
-                        <input type="text" class="fronttext w-25" placeholder="Earnings Starting Persentage" id="pwd" />
+                        <input type="text" class="fronttext w-25" placeholder="Earnings Starting Persentage" id="earn_start" />
                         <label for="pwd">And</label>
 
-                        <input type="text" class="fronttext w-25" placeholder="Earnings Max Persentage" id="pwd" />
+                        <input type="text" class="fronttext w-25" placeholder="Earnings Max Persentage" id="earn_stop" />
 
                         <br /><br />
                         <label for="pwd">Employee Account Information</label>
                         <br />
                         <label for="pwd">E-mail</label>
                         <br />
-                        <input type="text" class="fronttext w-25" placeholder="Employee E-mail" id="pwd" />
+                        <input type="text" class="fronttext w-25" placeholder="Employee E-mail" id="emp_email" />
                         <br />
                         <label for="pwd">Password</label>
                         <br />
-                        <input type="text" class="fronttext w-25" placeholder="Employee Password" id="pwd" />
+                        <input type="text" class="fronttext w-25" placeholder="Employee Password" id="emp_password" />
 
                         <br /><br />
-                        <button class="btn btn-info w-25">Hire Employee</button>
+                        <button class="btn btn-info w-25" id="btn_hire_new_emp">
+                Hire Employee
+              </button>
                         <br />
                         <br />
                         <br />
@@ -114,7 +120,7 @@
 
                 <div class="collapse fronttext" id="fireemployee">
                     <div class="form-group fronttext mt-5">
-                        <label for="pwd">Employee ID</label>
+                        <label for="pwd">Employee Full Name</label>
                         <br />
                         <input type="text" class="fronttext w-50" placeholder="Employee Identification Number" id="emp_id" />
                         <br />
@@ -139,7 +145,7 @@
         <div class="row">
             <div class="col mt-3 fronttext">
                 <button class="btn btn-info w-25" type="button" data-toggle="collapse" data-target="#addproject" aria-expanded="false" aria-controls="addproject">
-            Register New / Update Project
+            View / Register New / Update Project
           </button>
 
                 <div class="collapse fronttext" id="addproject">
@@ -162,7 +168,7 @@
 
                         <br />
 
-                        <label for="pwd">Developer ID</label>
+                        <label for="pwd">Developer Full Name</label>
 
                         <br />
                         <input type="text" class="fronttext w-50" placeholder="Developer ID" id="pwd" />
@@ -170,13 +176,13 @@
                         <br />
                         <br />
 
-                        <label for="pwd">Project Manager ID</label>
+                        <label for="pwd">Project Manager Full Name</label>
                         <br />
                         <input type="text" class="fronttext w-50" placeholder="Project Manager ID" id="pwd" />
                         <br />
                         <br />
 
-                        <label for="pwd">Reference ID</label>
+                        <label for="pwd">Reference Full Name</label>
                         <br />
                         <input type="text" class="fronttext w-50" placeholder="Reference ID" id="pwd" />
                         <br />
@@ -237,11 +243,26 @@
                 </div>
             </div>
         </div>
+        <!--View All Projects-->
+        <div class="row">
+            <div class="col mt-3 fronttext">
+                <button class="btn btn-info w-25" type="button" data-toggle="collapse" data-target="#viewprojects" aria-expanded="false" aria-controls="viewprojects">
+            View Project Details
+          </button>
+
+                <div class="collapse fronttext" id="viewprojects">
+                    <div class="form-group fronttext mt-5">
+                        <textarea type="text" rows="10" class="fronttext w-50" placeholder="Loading" readonly id="pwd"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+    <script src="firebase-data-manager.js"></script>
 </body>
 
 </html>

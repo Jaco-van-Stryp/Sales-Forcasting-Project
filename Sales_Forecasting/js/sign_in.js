@@ -161,7 +161,7 @@ function loginError(message) {
 function accountValidation(email, pass) {
 
     if (email.includes("@") && email.includes(".") && email.length > 11) {
-        if (pass.length > 8) {
+        if (pass.length >= 8) {
             return true;
         } else {
             stopLoading();

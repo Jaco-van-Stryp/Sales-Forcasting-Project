@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
+
+    <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <title>Sales Forecasting - Sign In</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+
+<body>
+
+
+    <div id="overlay"></div>
+    <div id="loading">Loading</div>
+
+    <div id="loader"></div>
+
+    <div class="container-fluid my-container text-white">
+        <div class="row my-row">
+            <div class="col-5 my-col">
+                <img class="w-100 h-100" src="../Sales_Forecasting/Resources/Logo.webp" />
+            </div>
+            <div class="col home-btn my-col text-right">
+                <a href="../index.html" class="text-white">
+                    <li>Company Website</li>
+                </a>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col fronttext my-col mt-4">
+                <h1>Employee Login</h1>
+            </div>
+        </div>
+
+        <div class="row my-row fronttext">
+            <div class="col">
+                <h2 id="signin_main_lable">Please Enter Your Credentials</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid my-container text-white text-center">
+        <div class="row my-row">
+            <div class="col">
+                <section id="info_list">
+                    <section id="info_list_item">
+                        <input id="client_info" type="text" placeholder="Employee E-Mail Address" />
+                    </section>
+            </div>
+
+        </div>
+        <div class="row my-row">
+            <div class="col mb-auto">
+                <section id="info_list_item">
+                    <input id="password_info" type="password" placeholder="Employee Code" />
+                </section>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid my-container text-white text-center mt-5">
+        <div class="row my-row fronttext">
+            <div class="col-md-12 my-col justify-content-center">
+                <section id="signin_button_signin">
+                    <ul id="btns_s" class="list-unstyled ">
+                        <a href="#" class="nounderline">
+                            <li id="signin_btn">
+                                Log In
+                            </li>
+                        </a>
+                    </ul>
+                </section>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+</body>
+
+<script src="main.js"></script>
+
+</html>

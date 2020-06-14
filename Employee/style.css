@@ -1,0 +1,179 @@
+body {
+    background-image: url("../Sales_Forecasting/Resources/background.webp");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+
+/*
+.my-container {
+    border: 1px solid green;
+}
+
+.my-row {
+    border: 3px solid red;
+}
+
+.my-col {
+    border: 3px solid blue;
+}
+*/
+
+h1 {
+    font-size: 500% !important;
+}
+
+.fronttext {
+    text-align: center;
+    font-family: "Bellota Text";
+    letter-spacing: 2px;
+}
+
+.largetext {
+    font-size: 250% !important;
+}
+
+.home-btn {
+    margin-top: 2%;
+    margin-right: 2%;
+    font-size: x-large !important;
+    text-align: right;
+    font-size: large;
+    color: white;
+    list-style: none;
+}
+
+#client_info,
+#password_info {
+    /* properties of the text fields */
+    color: white;
+    background: none;
+    outline: none;
+    text-align: left;
+    letter-spacing: 3px;
+    padding: 1%;
+    border-top-style: none;
+    border-right-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    width: 70%;
+    border-width: 4px;
+    letter-spacing: 1px;
+    font-family: "Oswald", sans-serif;
+    font-size: 130%;
+}
+
+#client_info::placeholder,
+#password_info::placeholder {
+    color: white;
+}
+
+#signin_btn:hover,
+#reg_btn:hover {
+    background-color: coral;
+}
+
+hr {
+    border-top: 1px solid white !important;
+}
+
+#signin_btn {
+    color: white;
+    letter-spacing: 3px;
+    border-radius: 50px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    font-size: 150%;
+    padding: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.nounderline {
+    text-decoration: none !important;
+}
+
+@media screen and (max-width: 1000px) {
+    #reg_btn,
+    #signin_btn {
+        margin-top: 0%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 100%;
+    }
+    #client_info::placeholder,
+    #password_info::placeholder {
+        font-size: small;
+        padding-left: 2%;
+    }
+    .home-btn {
+        margin-top: 1%;
+        margin-right: 1%;
+        font-size: small !important;
+    }
+    #client_info,
+    #password_info {
+        font-size: 80% !important;
+        padding-left: 2%;
+    }
+    h1 {
+        font-size: 120% !important;
+    }
+    h2 {
+        font-size: 80% !important;
+    }
+}
+
+#loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-right: 16px solid #1b5074;
+    border-left: 16px solid #1b5074;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 3;
+}
+
+#overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

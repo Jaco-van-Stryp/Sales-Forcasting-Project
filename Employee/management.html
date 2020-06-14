@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <title>Sales Forecasting - Sign In</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+</head>
+
+<body>
+    <div class="container-fluid my-container text-white">
+        <div class="row my-row">
+            <div class="col-5 my-col">
+                <img class="w-100 h-100" src="../Sales_Forecasting/Resources/Logo.webp" />
+            </div>
+            <div class="col home-btn my-col text-right">
+                <a href="../index.html" class="text-white">
+                    <li>Company Website</li>
+                </a>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col fronttext my-col mt-4">
+                <h1>Management</h1>
+                <hr />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col mt-3 fronttext">
+                <button class="btn btn-success w-25" type="button" data-toggle="collapse" data-target="#hireemployee" aria-expanded="false" aria-controls="hireemployee">
+            Hire New Employee
+          </button>
+
+                <div class="collapse fronttext" id="hireemployee">
+                    <div class="form-group fronttext mt-5">
+                        <label for="pwd">Employee ID</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Employee Identification Number" id="emp_id" />
+                        <br />
+
+                        <br />
+                        <label for="pwd">Employee Name</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Employee Legal First Name" id="pwd" />
+                        <br />
+                        <br />
+
+                        <label for="pwd">Employee Surname</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Employee Legal Surname" id="pwd" />
+                        <br />
+                        <br />
+
+                        <label for="pwd">Employee Role</label>
+                        <br />
+                        <button class="btn btn-success">Developer</button>
+                        <button class="btn btn-danger">Reference</button>
+                        <button class="btn btn-danger">Project Manager</button>
+                        <br />
+                        <br />
+
+                        <label for="pwd">Payment Persentage between</label>
+                        <br />
+                        <input type="text" class="fronttext w-25" placeholder="Earnings Starting Persentage" id="pwd" />
+                        <label for="pwd">And</label>
+
+                        <input type="text" class="fronttext w-25" placeholder="Earnings Max Persentage" id="pwd" />
+
+                        <br /><br />
+                        <label for="pwd">Employee Account Information</label>
+                        <br />
+                        <label for="pwd">E-mail</label>
+                        <br />
+                        <input type="text" class="fronttext w-25" placeholder="Employee E-mail" id="pwd" />
+                        <br />
+                        <label for="pwd">Password</label>
+                        <br />
+                        <input type="text" class="fronttext w-25" placeholder="Employee Password" id="pwd" />
+
+                        <br /><br />
+                        <button class="btn btn-info w-25">Hire Employee</button>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!--Fire Employee-->
+        <div class="row">
+            <div class="col mt-3 fronttext">
+                <button class="btn btn-danger w-25" type="button" data-toggle="collapse" data-target="#fireemployee" aria-expanded="false" aria-controls="fireemployee">
+            Remove Existing Employee
+          </button>
+
+                <div class="collapse fronttext" id="fireemployee">
+                    <div class="form-group fronttext mt-5">
+                        <label for="pwd">Employee ID</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Employee Identification Number" id="emp_id" />
+                        <br />
+
+                        <br />
+                        <label for="pwd">Reason For Termination Reason</label>
+                        <br />
+                        <textarea class="fronttext w-50" rows="5" placeholder="Reason For Employee Termination" id="pwd"></textarea>
+                        <br /><br />
+                        <button class="btn btn-info w-25">Terminate Employee</button>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Add Project-->
+
+        <div class="row">
+            <div class="col mt-3 fronttext">
+                <button class="btn btn-info w-25" type="button" data-toggle="collapse" data-target="#addproject" aria-expanded="false" aria-controls="addproject">
+            Register New / Update Project
+          </button>
+
+                <div class="collapse fronttext" id="addproject">
+                    <div class="form-group fronttext mt-5">
+                        <label for="pwd">Project ID</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Project Identification Number" id="emp_id" />
+                        <button class="btn btn-info">Auto Generate</button>
+                        <button class="btn btn-success">Load ID</button>
+
+                        <br />
+
+                        <br />
+                        <label for="pwd">Project Type</label>
+                        <br />
+                        <button class="btn btn-success">Website</button>
+                        <button class="btn btn-danger">Desktop</button>
+                        <button class="btn btn-danger">Mobile</button>
+                        <br />
+
+                        <br />
+
+                        <label for="pwd">Developer ID</label>
+
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Developer ID" id="pwd" />
+
+                        <br />
+                        <br />
+
+                        <label for="pwd">Project Manager ID</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Project Manager ID" id="pwd" />
+                        <br />
+                        <br />
+
+                        <label for="pwd">Reference ID</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Reference ID" id="pwd" />
+                        <br />
+                        <br />
+
+                        <label for="pwd">Client Full Name</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Client Full Name" id="pwd" />
+
+                        <br />
+                        <br />
+
+                        <label for="pwd">Client Contact Info</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Client Contact Information" id="pwd" />
+                        <br /><br />
+                        <label for="pwd">Client Invoiced</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Client Invoiced" id="pwd" />
+                        <br /><br />
+                        <label for="pwd">Status</label>
+                        <br />
+                        <button class="btn btn-success mt-3">Project Registered</button>
+
+                        <button class="btn btn-danger mt-3">Client Invoiced</button>
+                        <button class="btn btn-danger mt-3">Awaiting Developer</button>
+                        <button class="btn btn-danger mt-3">Project In Progress</button>
+                        <button class="btn btn-danger mt-3">Project Completed</button>
+                        <button class="btn btn-danger mt-3">
+                Project Assigned To Client
+              </button>
+                        <button class="btn btn-danger mt-3">Payment Received</button>
+                        <button class="btn btn-danger mt-3">
+                Developer Paid & Project Complete
+              </button>
+                        <br />
+
+                        <button class="btn btn-danger mt-3">
+                Client Refunded / Canceled
+              </button>
+
+                        <br /><br />
+                        <label for="pwd">Project Instructions</label>
+                        <br />
+                        <textarea type="text" rows="10" class="fronttext w-50" placeholder="Project Instructions" id="pwd"></textarea>
+                        <br /><br />
+                        <label for="pwd">Due Date</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Due Date" id="pwd" />
+                        <br /><br />
+                        <button class="btn btn-info w-25">Add / Update Project</button>
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                        <br />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+</body>
+
+</html>

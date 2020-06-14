@@ -15,7 +15,7 @@
     firebase.analytics();
     //Initialize Firestore
     const db = firebase.firestore();
-
+    var fbuser = "";
     firebase.auth().onAuthStateChanged(firebaseUser => {
         startLoading();
 
@@ -28,6 +28,8 @@
                         window.location.replace("https://employee.jaxifysoftware.com");
                     } else {
                         stopLoading();
+                        fbuser = firebaseUser.email;
+
                     }
                 } else {
                     // doc.data() will be undefined in this case
@@ -86,6 +88,7 @@
                 cur_prj_id: "N/A",
                 status: "Hired",
                 date_hired: today,
+                hired_by: fbuser,
 
             }).then(function() {
 

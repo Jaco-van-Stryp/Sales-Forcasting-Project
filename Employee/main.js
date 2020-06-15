@@ -70,15 +70,18 @@ function loginError(message) {
                         if (doc.exists) {
                             auth_role = (doc.get("emp_job"));
                             if (auth_role == "Director") {
-                                window.location.replace("https://jaxifysoftware.com/Employee/management.html");
+                                document.location = 'management.html';
                             } else if (auth_role == "Developer") {
-                                window.location.replace("https://jaxifysoftware.com/Employee/development.html");
+                                document.location = 'development.html';
+
 
                             } else if (auth_role == "Reference") {
-                                window.location.replace("https://jaxifysoftware.com/Employee/reference.html");
+                                document.location = 'reference.html';
+
 
                             } else if (auth_role == "Project Manager") {
-                                window.location.replace("https://jaxifysoftware.com/Employee/projectmanager.html");
+                                document.location = 'projectmanager.html';
+
 
                             }
                         } else {

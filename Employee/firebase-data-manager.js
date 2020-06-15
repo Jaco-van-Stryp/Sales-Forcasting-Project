@@ -25,7 +25,8 @@
                 if (doc.exists) {
                     auth_role = (doc.get("emp_job"));
                     if (auth_role != "Director") {
-                        window.location.replace("https://employee.jaxifysoftware.com");
+                        docoment.location = 'index.html';
+
                     } else {
                         stopLoading();
                         fbuser = firebaseUser.email;
@@ -34,17 +35,19 @@
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
-                    window.location.replace("https://employee.jaxifysoftware.com");
+                    docoment.location = 'index.html';
+
 
                 }
             }).catch(function(error) {
                 console.log("Error getting document:", error);
-                window.location.replace("https://employee.jaxifysoftware.com");
+                docoment.location = 'index.html';
+
 
             });
         } else {
 
-            window.location.replace("https://employee.jaxifysoftware.com");
+            docoment.location = 'index.html';
             stopLoading();
         }
     });

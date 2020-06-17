@@ -17,7 +17,7 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
 
-    <title>Sales Forecasting - Sign In</title>
+    <title>Project Management System - Managers</title>
     <link rel="stylesheet" href="style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -152,8 +152,10 @@
                     <div class="form-group fronttext mt-5">
                         <label for="pwd">Project ID</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Project Identification Number" id="emp_id" />
-                        <button class="btn btn-info">Auto Generate</button>
+                        <input type="text" class="fronttext w-50" placeholder="Project ID - 8 Characters" id="project_ID" />
+                        <button class="btn btn-info" id="auto_generate">
+                Auto Generate
+              </button>
                         <button class="btn btn-success">Load ID</button>
 
                         <br />
@@ -168,40 +170,40 @@
 
                         <br />
 
-                        <label for="pwd">Developer Full Name</label>
+                        <label for="pwd">Developer Email Address</label>
 
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Developer ID" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Developer Email Address" id="project_developer_email" />
 
-                        <br />
-                        <br />
-
-                        <label for="pwd">Project Manager Full Name</label>
-                        <br />
-                        <input type="text" class="fronttext w-50" placeholder="Project Manager ID" id="pwd" />
                         <br />
                         <br />
 
-                        <label for="pwd">Reference Full Name</label>
+                        <label for="pwd">Project Manager Email Address</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Reference ID" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Project Manager Email Address" id="project_manager_email" />
+                        <br />
+                        <br />
+
+                        <label for="pwd">Reference Email Address</label>
+                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Reference ID" id="project_reference_email" />
                         <br />
                         <br />
 
                         <label for="pwd">Client Full Name</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Client Full Name" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Client Full Name" id="project_client_name" />
 
                         <br />
                         <br />
 
-                        <label for="pwd">Client Contact Info</label>
+                        <label for="pwd">Client Email Address</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Client Contact Information" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Client Email Address" id="project_client_email" />
                         <br /><br />
                         <label for="pwd">Client Invoiced</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Client Invoiced" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Client Invoiced" id="project_client_invoiced" />
                         <br /><br />
                         <label for="pwd">Status</label>
                         <br />
@@ -227,13 +229,15 @@
                         <br /><br />
                         <label for="pwd">Project Instructions</label>
                         <br />
-                        <textarea type="text" rows="10" class="fronttext w-50" placeholder="Project Instructions" id="pwd"></textarea>
+                        <textarea type="text" rows="10" class="fronttext w-50" placeholder="Project Instructions" id="project_instructions"></textarea>
                         <br /><br />
                         <label for="pwd">Due Date</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Due Date" id="pwd" />
+                        <input type="text" class="fronttext w-50" placeholder="Due Date" id="project_due_date" />
                         <br /><br />
-                        <button class="btn btn-info w-25">Add / Update Project</button>
+                        <button id="final_add_project" class="btn btn-info w-25">
+                Add / Update Project
+              </button>
                         <br />
                         <br />
                         <br />

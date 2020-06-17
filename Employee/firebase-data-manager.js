@@ -25,7 +25,7 @@
                 if (doc.exists) {
                     auth_role = (doc.get("emp_job"));
                     if (auth_role != "Director") {
-                        docoment.location = 'index.html';
+                        document.location = 'index.html';
 
                     } else {
                         stopLoading();
@@ -35,19 +35,19 @@
                 } else {
                     // doc.data() will be undefined in this case
                     console.log("No such document!");
-                    docoment.location = 'index.html';
+                    document.location = 'index.html';
 
 
                 }
             }).catch(function(error) {
                 console.log("Error getting document:", error);
-                docoment.location = 'index.html';
+                document.location = 'index.html';
 
 
             });
         } else {
 
-            docoment.location = 'index.html';
+            document.location = 'index.html';
             stopLoading();
         }
     });
@@ -55,7 +55,95 @@
 
     var newUser = false;
     const hireEmp = document.getElementById("btn_hire_new_emp");
+    const regProject = document.getElementById("final_add_project");
+    const genRandom = document.getElementById("auto_generate");
+    genRandom.addEventListener('click', e => {
 
+        var dt = new Date().getTime();
+        var uuid = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+            var r = (dt + Math.random() * 16) % 16 | 0;
+            dt = Math.floor(dt / 16);
+            return (c == 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+        });
+        uuid = uuid.substr(0, 8);
+        document.getElementById("project_ID").value = uuid;
+
+    });
+
+    regProject.addEventListener('click', e => {
+        startLoading();
+        var today = new Date();
+        var dd = String(today.getDate()).padStart(2, '0');
+        var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = today.getFullYear();
+
+        var projID = "blank"
+        projID = document.getElementById("project_ID").value
+        var developer = document.getElementById("project_developer_email").value
+        var manager = document.getElementById("project_manager_email").value
+        var projectType = "Website"
+        var reference = document.getElementById("project_reference_email").value
+        var clientName = document.getElementById("project_client_name").value
+        var clientEmail = document.getElementById("project_client_email").value
+        var clientInvoiced = document.getElementById("project_client_invoiced").value
+        var projectStatus = "Project Registered"
+        var instructions = document.getElementById("project_instructions").value
+        var dueDate = document.getElementById("project_due_date").value
+        today = mm + '/' + dd + '/' + yyyy;
+
+        if (projID == "" || projID.length <= 7 || developer == "" || manager == "" || reference == "" || clientName == "" || clientEmail == "" || clientInvoiced == "" || projectStatus == "" || instructions == "" || dueDate == "") {
+            alert("Please make sure all info is filled in correctly")
+        } else {
+
+            startLoading()
+            db.collection("projects").doc(projID + "").set({
+                    ProjectID: projID,
+                    ProjectType: projectType,
+                    DeveloperEmail: developer,
+                    ManagerEmail: manager,
+                    ReferenceEmail: reference,
+                    ClientName: clientName,
+                    ClientInvoiced: clientInvoiced,
+                    Status: projectStatus,
+                    ProjectInstructions: instructions,
+                    DueDate: dueDate,
+                    lastUpdatedBy: fbuser
+                }).then(function() {
+                    db.collection("employees").doc(developer).update({
+                            cur_prj_id: projID
+
+                        }).then(function() {
+                            ///
+                            db.collection("employees").doc(reference).update({ //TODO Change to update when creating references
+                                    cur_prj_id: projID //TODO Figure this out
+                                }).then(function() {
+                                    stopLoading();
+                                    alert("Project ID " + projID + " Has successfully been created / Updated for " + clientName + "\n\nThey can refer to their project details via client.jaxifysoftware.com")
+
+                                })
+                                .catch(function(error) {
+                                    stopLoading();
+                                    alert(error)
+                                });
+                            ///
+                            stopLoading();
+                        })
+                        .catch(function(error) {
+                            stopLoading();
+                            alert(error)
+                        });
+                })
+                .catch(function(error) {
+                    stopLoading();
+                    alert(error)
+                });
+
+
+
+        }
+        stopLoading();
+
+    })
 
     //Creating new employee
     hireEmp.addEventListener('click', e => {

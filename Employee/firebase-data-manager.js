@@ -144,8 +144,11 @@
         stopLoading();
 
     })
-
-    //Creating new employee
+    const developerMode = document.getElementById("dev_mode");
+    developerMode.addEventListener('click', e => {
+            document.location = "development.html"
+        })
+        //Creating new employee
     hireEmp.addEventListener('click', e => {
         startLoading();
         const email = document.getElementById("emp_email").value;
@@ -205,6 +208,15 @@
     });
 }());
 
+const signoutbtn = document.getElementById("sign_out_user");
+signoutbtn.addEventListener('click', e => {
+    firebase.auth().signOut().then(function() {
+        window.location = 'index.html';
+        // console.log("Signed Out")
+    }).catch(function(error) {
+        alert.window.log("Could Not Sign You Out")
+    });
+});
 
 
 stopLoading();

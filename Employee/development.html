@@ -2,13 +2,88 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
+
+    <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <!-- Add Firebase products that you want to use -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
+
+    <title>Project Management System - Managers</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 </head>
 
 <body>
-    <h1>Work In Progress</h1>
+    <div id="overlay"></div>
+    <div id="loading">Loading</div>
+
+    <div id="loader"></div>
+    <div class="container-fluid my-container text-white">
+        <div class="row my-row">
+            <div class="col-5 my-col">
+                <img class="w-100 h-100" src="../Sales_Forecasting/Resources/Logo.webp" />
+            </div>
+            <div class="col home-btn my-col text-right">
+                <a href="#" class="text-white">
+                    <li id="sign_out_user">Sign Out</li>
+                </a>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col fronttext my-col mt-4">
+                <h1 id="user_display_name">Loading...</h1>
+                <hr />
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col fronttext my-col mt-4">
+                <h2 id="dev_backlog_status"></h2>
+            </div>
+        </div>
+
+        <div class="row my-row">
+            <div class="col fronttext my-col mt-4">
+                <h5 id="dev_compensation"></h5>
+            </div>
+        </div>
+        <div class="row my-row">
+            <div class="col fronttext my-col mt-4">
+                <h5 id="dev_instructions_before"></h5>
+            </div>
+        </div>
+
+        <div class="row my-row">
+            <div class="col fronttext my-col mt-4">
+                <textarea style="display: none;" type="text" rows="10" class="fronttext w-50" placeholder="Loading" readonly id="dev_instructions"></textarea>
+                <br /><br />
+                <button style="display: none;" id="quickVis01" class="btn btn-success mt-3 mr-3 w-25">
+            Accept
+          </button>
+
+                <button style="display: none;" id="quickVis02" class="btn btn-danger mt-3 ml-3 w-25">
+            Decline
+          </button>
+                <br />
+                <br />
+                <br />
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js " integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj " crossorigin="anonymous "></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js " integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo " crossorigin="anonymous "></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
+    <script src="firebase-data-development.js"></script>
 </body>
 
 </html>

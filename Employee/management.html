@@ -34,12 +34,12 @@
                 <img class="w-100 h-100" src="../Sales_Forecasting/Resources/Logo.webp" />
             </div>
             <div class="col home-btn my-col text-right">
-                <a href="../index.html" class="text-white">
-                    <li>Company Website</li>
+                <a href="#" class="text-white">
+                    <li id="sign_out_user">Sign Out</li>
                 </a>
             </div>
         </div>
-        <div class="row my-row">
+        <div class="row my-ro">
             <div class="col fronttext my-col mt-4">
                 <h1>Management</h1>
                 <hr />
@@ -180,8 +180,7 @@
 
                         <label for="pwd">Project Manager Email Address</label>
                         <br />
-                        <input type="text" class="fronttext w-50" placeholder="Project Manager Email Address" id="project_manager_email" />
-                        <br />
+                        <input type="text" class="fronttext w-50" placeholder="Project Manager Email Address" id="project_manager_email" /> br />
                         <br />
 
                         <label for="pwd">Reference Email Address</label>
@@ -207,7 +206,7 @@
                         <br /><br />
                         <label for="pwd">Status</label>
                         <br />
-                        <button class="btn btn-success mt-3">Project Registered</button>
+                        <button class="btn tn-success mt-3">Project Registered</button>
 
                         <button class="btn btn-danger mt-3">Client Invoiced</button>
                         <button class="btn btn-danger mt-3">Awaiting Developer</button>
@@ -250,15 +249,9 @@
         <!--View All Projects-->
         <div class="row">
             <div class="col mt-3 fronttext">
-                <button class="btn btn-info w-25" type="button" data-toggle="collapse" data-target="#viewprojects" aria-expanded="false" aria-controls="viewprojects">
-            View Project Details
+                <button class="btn btn-success w-25" type="button" id="dev_mode" data-toggle="collapse" data-target="#viewprojects" aria-expanded="false" aria-controls="viewprojects">
+            Developer Mode
           </button>
-
-                <div class="collapse fronttext" id="viewprojects">
-                    <div class="form-group fronttext mt-5">
-                        <textarea type="text" rows="10" class="fronttext w-50" placeholder="Loading" readonly id="pwd"></textarea>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

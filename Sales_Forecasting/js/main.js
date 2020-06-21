@@ -77,13 +77,13 @@ function loginError(message) {
     signInBtn.addEventListener('click', e => {
         if (signedIn == true) {
             firebase.auth().signOut().then(function() {
-                window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+                document.location = ("sign_in.html");
                 // console.log("Signed Out")
             }).catch(function(error) {
                 alert.window.log("Could Not Sign You Out")
             });
         } else {
-            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+            document.location = ("sign_in.html");
 
         }
 

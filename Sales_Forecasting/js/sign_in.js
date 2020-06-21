@@ -197,16 +197,18 @@ function redirect() {
     if (getCookie("prevPage") == "Payment") {
         document.cookie = "prevPage=no_value"
 
-        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/membership.html");
+        document.location = "membership.html"
+
     } else if (getCookie("prevPage") == "profile_page") {
         document.cookie = "prevPage=no_value"
 
-        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/my_account.html");
+        document.location = "my_account.html";
 
     } else {
         document.cookie = "prevPage=no_value"
 
-        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/");
+        document.location = "index.html"
+
     }
 }
 

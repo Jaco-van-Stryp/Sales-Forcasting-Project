@@ -18,7 +18,7 @@ const db = firebase.firestore();
 
 if (getCookie("self_authenticated") == "True") {} else {
     document.cookie = "prevPage=profile_page"
-    window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+    document.location = "sign_in.html"
 }
 
 
@@ -67,7 +67,7 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     } else {
         document.cookie = "self_authenticated=False"
         document.cookie = "prevPage=profile_page"
-        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+        document.location = ("sign_in.html");
 
     }
 });

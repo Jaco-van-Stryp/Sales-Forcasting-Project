@@ -11,7 +11,8 @@ var firebaseConfig = {
 };
 if (getCookie("self_authenticated") == "True") {} else {
     document.cookie = "prevPage=Payment"
-    window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+    document.location = "sign_in.html"
+
 }
 
 
@@ -171,7 +172,8 @@ firebase.auth().onAuthStateChanged(firebaseUser => {
     } else {
         document.cookie = "self_authenticated=False"
         document.cookie = "prevPage=Payment"
-        window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+        document.location = "sign_in.html"
+
 
     }
 });
@@ -228,7 +230,8 @@ function grantPermitions(level) {
         } else {
             document.cookie = "self_authenticated=False"
             document.cookie = "prevPage=Payment"
-            window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting/sign_in");
+            document.location = "sign_in.html"
+
 
         }
     });
@@ -242,7 +245,8 @@ function paymentRedirect() {
     deFillBackground()
 
     //TODO: Update this section to more advanced system
-    window.location.replace("https://www.jaxifysoftware.com/Sales_Forecasting");
+    document.location = "index.html"
+
 }
 
 stopLoading();

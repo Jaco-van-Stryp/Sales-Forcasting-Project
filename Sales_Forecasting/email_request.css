@@ -1,0 +1,12 @@
+body {
+    background-size: cover;
+    background-image: url("../Resources/background.webp");
+    background-color: RGB(28, 24, 24);
+    margin: 0;
+    color: white;
+    background-attachment: fixed;
+    user-select: none;
+    margin: 0;
+    height: 100%;
+    overflow: hidden;
+}

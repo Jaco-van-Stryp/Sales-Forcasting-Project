@@ -2,8 +2,6 @@ body {
     background-size: cover;
     background-image: url("../Resources/background.webp");
     background-color: RGB(28, 24, 24);
-    /*TODO - Change at a later stage*/
-    /*Margin to remove unneccecary space*/
     margin: 0;
     color: white;
     background-attachment: fixed;
@@ -12,4 +10,20 @@ body {
 
 .helpBody {
     text-align: center;
+}
+
+h2 {
+    color: gray;
+}
+
+h2:hover {
+    color: red;
+}
+
+a {
+    text-decoration: none;
+}
+
+p {
+    font-size: 20px;
 }

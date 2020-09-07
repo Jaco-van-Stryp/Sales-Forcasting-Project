@@ -2,6 +2,188 @@
 <html>
 
 <head>
+
+<style>
+body {
+    background-image: url("../Sales_Forecasting/Resources/background.webp");
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+
+/*
+.my-container {
+    border: 1px solid green;
+}
+
+.my-row {
+    border: 3px solid red;
+}
+
+.my-col {
+    border: 3px solid blue;
+}
+*/
+
+h1 {
+    font-size: 500% !important;
+}
+
+.fronttext {
+    text-align: center;
+    font-family: "Bellota Text";
+    letter-spacing: 2px;
+}
+
+.largetext {
+    font-size: 250% !important;
+}
+
+.home-btn {
+    margin-top: 2%;
+    margin-right: 2%;
+    font-size: x-large !important;
+    text-align: right;
+    font-size: large;
+    color: white;
+    list-style: none;
+}
+
+#client_info,
+#password_info {
+    /* properties of the text fields */
+    color: white;
+    background: none;
+    outline: none;
+    text-align: left;
+    letter-spacing: 3px;
+    padding: 1%;
+    border-top-style: none;
+    border-right-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 2%;
+    width: 70%;
+    border-width: 4px;
+    letter-spacing: 1px;
+    font-family: "Oswald", sans-serif;
+    font-size: 130%;
+}
+
+#client_info::placeholder,
+#password_info::placeholder {
+    color: white;
+}
+
+#signin_btn:hover,
+#reg_btn:hover {
+    background-color: coral;
+}
+
+hr {
+    border-top: 1px solid white !important;
+}
+
+#signin_btn {
+    color: white;
+    letter-spacing: 3px;
+    border-radius: 50px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    font-size: 150%;
+    padding: 5px;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.nounderline {
+    text-decoration: none !important;
+}
+
+@media screen and (max-width: 1000px) {
+    #reg_btn,
+    #signin_btn {
+        margin-top: 0%;
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 100%;
+    }
+    #client_info::placeholder,
+    #password_info::placeholder {
+        font-size: small;
+        padding-left: 2%;
+    }
+    .home-btn {
+        margin-top: 1%;
+        margin-right: 1%;
+        font-size: small !important;
+    }
+    #client_info,
+    #password_info {
+        font-size: 80% !important;
+        padding-left: 2%;
+    }
+    h1 {
+        font-size: 120% !important;
+    }
+    h2 {
+        font-size: 80% !important;
+    }
+}
+
+#loader {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-right: 16px solid #1b5074;
+    border-left: 16px solid #1b5074;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+    z-index: 3;
+}
+
+#overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+</style>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous" />
 
     <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
@@ -95,6 +277,158 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js " integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI " crossorigin="anonymous "></script>
 </body>
 
-<script src="main.js"></script>
+<script>
+//console.log("Auth - " + getCookie("self_authenticated"))
+
+function loginError(message) {
+    stopLoading();
+    console.log(message)
+    newUser = false;
+    if (message.includes("badly formatted")) {
+        document.getElementById('signin_main_lable').innerHTML = "Please Follow The Appropriate Email Format<br>email@example.com"
+
+    }
+    if (message.includes("There is no user record corresponding to this identifier. The user may have been deleted.")) {
+        document.getElementById('signin_main_lable').innerHTML = "Sorry, You are not an employee of Jaxify Software!"
+
+    }
+    if (message.includes("The password is invalid")) {
+        document.getElementById('signin_main_lable').innerHTML = "Please Make Sure You Entered The Correct Email & Employee Code!"
+
+    }
+    if (message.includes("already in use")) {
+        document.getElementById('signin_main_lable').innerHTML = "This Email Already Exists, Try Signing In!"
+
+    }
+
+
+}
+(function() {
+    // Our web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyA9979-Um1TwPLskZr72_2bfiEJDpt2jSM",
+        authDomain: "jaxify-software-administration.firebaseapp.com",
+        databaseURL: "https://jaxify-software-administration.firebaseio.com",
+        projectId: "jaxify-software-administration",
+        storageBucket: "jaxify-software-administration.appspot.com",
+        messagingSenderId: "202323429712",
+        appId: "1:202323429712:web:b0ac3661a5b8a00a330455",
+        measurementId: "G-HDPSLJ18QK"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+    //Initialize Firestore
+    const db = firebase.firestore();
+
+    var newUser = false;
+    const userEmail = document.getElementById("client_info");
+    const userPassword = document.getElementById("password_info");
+    const btnLogin = document.getElementById('signin_btn');
+
+    btnLogin.addEventListener('click', e => {
+        startLoading();
+
+        const email = userEmail.value;
+        const pass = userPassword.value;
+        if (accountValidation(email, pass) == true) {
+
+            const auth = firebase.auth();
+            //Sign In
+            const promise = auth.signInWithEmailAndPassword(email, pass);
+            promise.catch(e => loginError(e.message));
+
+            var auth_role = "";
+
+            firebase.auth().onAuthStateChanged(firebaseUser => {
+                startLoading();
+
+                if (firebaseUser) {
+                    userData = db.collection("employees").doc(firebaseUser.email);
+                    console.log(firebaseUser.email)
+                    userData.get().then(function(doc) {
+                        if (doc.exists) {
+                            auth_role = (doc.get("emp_job"));
+                            if (auth_role == "Director") {
+                                document.location = 'management.html';
+                            } else if (auth_role == "Developer") {
+                                document.location = 'development.html';
+
+
+                            } else if (auth_role == "Reference") {
+                                document.location = 'reference.html';
+
+
+                            } else if (auth_role == "Project Manager") {
+                                document.location = 'projectmanager.html';
+
+
+                            }
+                        } else {
+                            // doc.data() will be undefined in this case
+                            stopLoading();
+                            console.error("Fail")
+                        }
+                    }).catch(function(error) {
+                        console.log("Error getting document:", error);
+                    });
+                } else {
+                    stopLoading();
+                }
+            });
+        }
+    })
+}());
+
+function accountValidation(email, pass) {
+
+    if (email.includes("@") && email.includes(".") && email.length > 11) {
+        if (pass.length >= 8) {
+            return true;
+        } else {
+            stopLoading();
+
+            document.getElementById('signin_main_lable').innerHTML = "Please Make Sure Your Employee Code Is At least 8 Characters Long"
+        }
+    } else {
+        stopLoading();
+
+        document.getElementById('signin_main_lable').innerHTML = "Please Follow The Appropriate Email Format<br>email@example.com"
+    }
+    return false;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+
+
+stopLoading();
+
+function startLoading() {
+    document.getElementById('loader').style.display = "block";
+    document.getElementById('loading').style.display = "block";
+    document.getElementById('overlay').style.display = "block";
+}
+
+function stopLoading() {
+    document.getElementById('loader').style.display = "none";
+    document.getElementById('loading').style.display = "none";
+    document.getElementById('overlay').style.display = "none";
+}
+</script>
 
 </html>

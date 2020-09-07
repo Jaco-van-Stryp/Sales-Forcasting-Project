@@ -128,13 +128,26 @@ li {
 
 #btn_pos {
     position: absolute;
-    top: 80%;
-    left: 34.5%;
+    top: 77%;
+    left: 42.7%;
 }
 
 h1 {
     font-size: 300%;
     position: absolute;
+    top: 47%;
+    left: 35%;
+}
+
+h2 {
+    font-size: 300%;
+    position: absolute;
     top: 57%;
-    left: 40%;
+    left: 49%;
+}
+
+.animation {
+    left: 42%;
+    top: 3%;
+    position: absolute;
 }

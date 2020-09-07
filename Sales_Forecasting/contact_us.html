@@ -3,23 +3,26 @@
 <html>
 
 <head>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <link rel="shortcut icon" type="image/png" href="Resources/favicon.png" />
-    <title>Sales Forcasting - Contact Us</title>
+    <title>Sales Forecasting - Contact Us</title>
     <link rel="stylesheet" href="styles/contact_usUI_Style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <script type="text/javascript">
-      var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-      (function(){
-      var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-      s1.async=true;
-      s1.src='https://embed.tawk.to/5f033a05760b2b560e6fd5c8/default';
-      s1.charset='UTF-8';
-      s1.setAttribute('crossorigin','*');
-      s0.parentNode.insertBefore(s1,s0);
-      })();
-      </script>
+        var Tawk_API = Tawk_API || {},
+            Tawk_LoadStart = new Date();
+        (function() {
+            var s1 = document.createElement("script"),
+                s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = "https://embed.tawk.to/5f033a05760b2b560e6fd5c8/default";
+            s1.charset = "UTF-8";
+            s1.setAttribute("crossorigin", "*");
+            s0.parentNode.insertBefore(s1, s0);
+        })();
+    </script>
 </head>
 
 <body>
@@ -32,39 +35,25 @@
             </a>
         </ul>
     </section>
-
+    <!--
     <section id="Information">
         <img src="Resources/help_page_user_main.webp" id="HelpfullUser" />
         <textarea id="chatbot_responce" rows="4" cols="50" wrap="soft" readonly>
 Welcome To The Sales Forcasting Help Section!
 I'm Here To Assist You!</textarea
       >
+        -->
+    <lottie-player class="animation" src="https://assets8.lottiefiles.com/packages/lf20_UGNktn.json" background="transparent" speed="1" style="width: 300px; height: 300px;" loop controls autoplay></lottie-player>
 
-      <label id="index_main_lable">
-        What do you Need Help With?
-      </label>
-      
-
-      <textarea
-        id="chatbot"
-        onchange="chatActive()"
-        rows="4"
-        cols="50"
-        wrap="soft"
-      >
-I Need Help With:
-
-</textarea
-      >
-      <!--Chatbot V0.1 - BETA-->
     </section>
-    <h1>OR</h1>
+    <h1>Start A Live Chat With Us</h1>
 
-    
-    <section id="btn_pos" >
-      <button onclick="window.location.href='contact_us_email_request.html';"  id="contact_btn">Request Assistance Via Email </button>
-      
-      
+    <h2>OR</h2>
+
+    <section id="btn_pos">
+        <button onclick="window.location.href='mailto:info@jaxifysoftware.com';" id="contact_btn">
+        Request Assistance Via Email
+      </button>
     </section>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -75,21 +64,22 @@ I Need Help With:
     <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>
 
     <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
-        authDomain: "sales-forecasting-prj251.firebaseapp.com",
-        databaseURL: "https://sales-forecasting-prj251.firebaseio.com",
-        projectId: "sales-forecasting-prj251",
-        storageBucket: "sales-forecasting-prj251.appspot.com",
-        messagingSenderId: "872303846348",
-        appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
-        measurementId: "G-KS26CVC8Y2",
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
+            authDomain: "sales-forecasting-prj251.firebaseapp.com",
+            databaseURL: "https://sales-forecasting-prj251.firebaseio.com",
+            projectId: "sales-forecasting-prj251",
+            storageBucket: "sales-forecasting-prj251.appspot.com",
+            messagingSenderId: "872303846348",
+            appId: "1:872303846348:web:fcc611f0f93d75abcbf369",
+            measurementId: "G-KS26CVC8Y2",
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
     </script>
-  </body>
-  <script type="text/javascript" src="js/chatbot.js"></script>
+</body>
+<script type="text/javascript" src="js/chatbot.js"></script>
+
 </html>

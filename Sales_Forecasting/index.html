@@ -36,6 +36,8 @@
 </head>
 
 <body>
+    
+    <script type="text/javascript" src="js/burgerIcon.js"></script>
     <!--Creating various sections of the website, we want the website to be
     modern looking with sections from top to bottom, we want everything looking polished
     and proffesional -->
@@ -45,15 +47,31 @@
         <!--Now that we added an image, we need to place text and buttons on it-->
         <section id="index_introduction_top">
             <!--Creating a future link for the burger menu-->
-            <a href="" onclick="openNav()">
+            <!--<a href="" onclick="openNav()">
                 <img id="index_introduction_burger" src="Resources/burger.png" />
-            </a>
+                
+               
+           </a>-->
+            
+            <div class="dropdown">
 
-            <div id="mySidebar" class="sidebar">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a
-          >
+                <button class="dropbtn">Search History</button>
+                <!--<a href="" onclick="SearchHistory()">-->
+                <script>src ="js/main.js"</script>
+                <div class="dropdown-content">
+                  <a href="#">Hand Sanitizer</a>
+                  <a href="#">TV</a>
+                  <a href="#">Iphone</a>
+                </div>
+              </div>
+
+               
+            
+                
+          
           <!--Enter Search History-->
         </div>
+        
 
         <!--A Logo that works with the host name and a fitting icon -->
         <a href="https://www.jaxifysoftware.com"

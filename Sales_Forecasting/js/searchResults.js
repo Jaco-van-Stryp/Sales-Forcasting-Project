@@ -81,7 +81,7 @@ function calculate(Main4Values) {
 }
 
 function convertToFireBase(obj) {
-    firebase.database().ref('predefined-searches/' + getCookie).set({
+    db.ref('predefined-searches/' + getCookie).set({
         object: obj,
     });
 }

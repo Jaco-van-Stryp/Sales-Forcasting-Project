@@ -43,8 +43,6 @@ function getCookie(cname) {
     return "";
 }
 
-//TODO - Get Cookie and search firebase for an existing project
-//TODO - Write code to generate a table
 
 
 function calculate(Main4Values) {
@@ -138,6 +136,25 @@ function loadTable(streamData) {
         table.innerHTML += "<tr><th>" + PredictionMonths[i].Company + "</th><th>" + PredictionMonths[i].Year + "</th><th>" + PredictionMonths[i].January + "</th><th>" + PredictionMonths[i].Febuary + "</th><th>" + PredictionMonths[i].March + "</th><th>" + PredictionMonths[i].April + "</th><th>" + PredictionMonths[i].May + "</th><th>" + PredictionMonths[i].June + "</th><th>" + PredictionMonths[i].July + "</th><th>" + PredictionMonths[i].August + "</th><th>" + PredictionMonths[i].September + "</th><th>" + PredictionMonths[i].October + "</th><th>" + PredictionMonths[i].November + "</th><th>" + PredictionMonths[i].September + "</th><th>" + PredictionMonths[i].Total + "</th></tr>";
     }
 
+}
+
+function genRand() {
+    let company = prompt("Enter Company")
+    let year = 2020;
+    let min = 10000;
+    let max = 90000;
+    let jan = Math.floor(Math.random() * (max - min + 1) + min);
+    let feb = Math.floor(Math.random() * (max - min + 1) + min);
+    let mar = Math.floor(Math.random() * (max - min + 1) + min);
+
+    Predictions.push({
+        Company: company,
+        Year: year,
+        January: jan,
+        Febuary: feb,
+        March: mar
+    })
+    loadTable(Predictions)
 }
 
 function addYear() {

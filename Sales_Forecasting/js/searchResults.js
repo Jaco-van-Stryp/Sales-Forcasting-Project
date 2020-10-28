@@ -1,3 +1,4 @@
+startLoading()
 var firebaseConfig = {
     apiKey: "AIzaSyA3G8meYatHgI-5KXPFkZYkACV7ULwkV30",
     authDomain: "sales-forecasting-prj251.firebaseapp.com",
@@ -100,13 +101,20 @@ try {
             Predictions = doc.get("object");
             loadTable(Predictions);
             setSearchQuery();
+            stopLoading();
+
         } else {
             console.log("No such document!");
             document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";
+            stopLoading();
 
         }
     }).catch(function(error) {
         console.log("Error getting document:", error);
+        document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";
+
+        stopLoading();
+
     });
 } catch (exception) {
     console.log(exception)
@@ -138,14 +146,30 @@ function addYear() {
     let jan = Number(prompt("Please enter January's Value"));
     let feb = Number(prompt("Please enter February's Value"));
     let mar = Number(prompt("Please enter March's Value"));
+    if (company == "" || year == "" || jan == "" || feb == "" || mar == "") {
+        alert("Please make sure to only enter valid data!")
+    } else {
+        Predictions.push({
+            Company: company,
+            Year: year,
+            January: jan,
+            Febuary: feb,
+            March: mar
+        })
+        loadTable(Predictions)
+    }
 
-    Predictions.push({
-        Company: company,
-        Year: year,
-        January: jan,
-        Febuary: feb,
-        March: mar
-    })
-    loadTable(Predictions)
 
+}
+
+function startLoading() {
+    document.getElementById('loader').style.display = "block";
+    document.getElementById('loading').style.display = "block";
+    document.getElementById('overlay').style.display = "block";
+}
+
+function stopLoading() {
+    document.getElementById('loader').style.display = "none";
+    document.getElementById('loading').style.display = "none";
+    document.getElementById('overlay').style.display = "none";
 }

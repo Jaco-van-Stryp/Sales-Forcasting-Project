@@ -76,3 +76,22 @@
             transform: rotate(360deg);
         }
     }
+    
+    table {
+        border: 4px solid white;
+    }
+    
+    th {
+        border-bottom: 0px solid #ccc;
+        border-top: 0px;
+        border-left: 0px;
+        border-right: 0px;
+    }
+    
+    tr {
+        border-bottom: 1px solid #ccc;
+    }
+    
+    a {
+        color: red;
+    }

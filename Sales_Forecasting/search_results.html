@@ -12,6 +12,8 @@
     <link rel="stylesheet" href="styles/search_resultsUI_Style.css" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+
     <title>Search Results - Jaxify Software</title>
 </head>
 
@@ -23,6 +25,8 @@
 
     <section>
         <h1 id="results_query">Loading...</h1>
+        <canvas id="myChart" width="400" height="100"></canvas>
+
         <table class="center" id="mainTable" border="3px" cellspacing="10px" style="letter-spacing: 2px">
             <tr>
                 <th>Company</th>
@@ -49,6 +53,10 @@
         <br />
         <br />
         <button class="center" onclick="genRand()">Generate Random</button>
+
+        <br />
+        <br />
+        <br />
     </section>
 </body>
 <!--Linking JS Code in JS Folder-->

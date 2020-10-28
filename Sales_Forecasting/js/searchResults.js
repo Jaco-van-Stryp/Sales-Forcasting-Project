@@ -50,14 +50,56 @@ function calculate(Main4Values) {
     let feb = Main4Values.Febuary;
     let mar = Main4Values.March;
     let apr = (jan + feb + mar) / 3;
-    let may = (feb + mar + apr) / 3;
-    let jun = (mar + apr + may) / 3;
-    let jul = (apr + may + jun) / 3;
-    let aug = (may + jun + jul) / 3;
-    let sep = (jun + jul + aug) / 3;
-    let oct = (jul + aug + sep) / 3;
-    let nov = (aug + sep + oct) / 3;
-    let dec = (sep + oct + nov) / 3;
+    let may = 0
+    if (apr > mar) {
+        may = ((feb + mar + apr) / 3) * 1.1;
+    } else {
+        may = ((feb + mar + apr) / 3) * 0.9;
+    }
+    let jun = 0;
+    if (may > apr) {
+        jun = ((mar + apr + may) / 3) * 1.1;
+    } else {
+        jun = (mar + apr + may) / 3 * 0.9;
+    }
+    let jul = 0;
+    if (jun > may) {
+        jul = (apr + may + jun) / 3 * 1.1;
+    } else {
+        jul = (apr + may + jun) / 3 * 0.9;
+    }
+    let aug = 0;
+    if (jul > jun) {
+        aug = (may + jun + jul) / 3 * 1.1;
+    } else {
+        aug = (may + jun + jul) / 3 * 0.9;
+    }
+    let sep = 0;
+    if (aug > jul) {
+        sep = (jun + jul + aug) / 3 * 1.1;
+    } else {
+        sep = (jun + jul + aug) / 3 * 0.9;
+    }
+    let oct = 0;
+    if (sep > aug) {
+        oct = (jul + aug + sep) / 3 * 1.1;
+    } else {
+        oct = (jul + aug + sep) / 3 * 0.9;
+    }
+    let nov = 0;
+    if (oct > sep) {
+        nov = (aug + sep + oct) / 3 * 1.1;
+
+    } else {
+        nov = (aug + sep + oct) / 3 * 0.9;
+    }
+    let dec = 0;
+    if (nov > oct) {
+        dec = (sep + oct + nov) / 3 * 1.1;
+    } else {
+        dec = (sep + oct + nov) / 3 * 0.9;
+
+    }
 
     let Predict = {
         Company: Main4Values.Company,
@@ -133,9 +175,94 @@ function loadTable(streamData) {
     let table = document.getElementById("mainTable");
     table.innerHTML = "<tr><th> Company </th><th> Year </th> <th> January </th> <th> February </th> <th> March </th> <th> April </th> <th> May </th> <th> June </th> <th> July </th> <th> August </th> <th> September </th> <th> October </th> <th> November </th> <th> December </th><th> Total Predicted Sales </th></tr>";
     for (var i = 0; i < PredictionMonths.length; i++) {
-        table.innerHTML += "<tr><th>" + PredictionMonths[i].Company + "</th><th>" + PredictionMonths[i].Year + "</th><th>" + PredictionMonths[i].January + "</th><th>" + PredictionMonths[i].Febuary + "</th><th>" + PredictionMonths[i].March + "</th><th>" + PredictionMonths[i].April + "</th><th>" + PredictionMonths[i].May + "</th><th>" + PredictionMonths[i].June + "</th><th>" + PredictionMonths[i].July + "</th><th>" + PredictionMonths[i].August + "</th><th>" + PredictionMonths[i].September + "</th><th>" + PredictionMonths[i].October + "</th><th>" + PredictionMonths[i].November + "</th><th>" + PredictionMonths[i].September + "</th><th>" + PredictionMonths[i].Total + "</th></tr>";
+        table.innerHTML += "<tr><th><a href='#' onclick='genGraph(\"" + PredictionMonths[i].Company + "\")'>" + PredictionMonths[i].Company + "</a></th><th>" + PredictionMonths[i].Year + "</th><th>" + PredictionMonths[i].January + "</th><th>" + PredictionMonths[i].Febuary + "</th><th>" + PredictionMonths[i].March + "</th><th>" + PredictionMonths[i].April + "</th><th>" + PredictionMonths[i].May + "</th><th>" + PredictionMonths[i].June + "</th><th>" + PredictionMonths[i].July + "</th><th>" + PredictionMonths[i].August + "</th><th>" + PredictionMonths[i].September + "</th><th>" + PredictionMonths[i].October + "</th><th>" + PredictionMonths[i].November + "</th><th>" + PredictionMonths[i].September + "</th><th>" + PredictionMonths[i].Total + "</th></tr>";
     }
 
+}
+
+function genGraph(company) {
+    document.getElementById('myChart').innerHTML = ""
+    let smartVal = 0;
+    for (var x = 0; x < Predictions.length; x++) {
+        if (Predictions[x].Company == company) {
+            smartVal = x;
+            break;
+        }
+    }
+    let useGraph = calculate(Predictions[smartVal])
+    let ctx = document.getElementById('myChart').getContext('2d');
+    let myChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+            datasets: [{
+                label: company,
+                data: [useGraph.January,
+                    useGraph.Febuary,
+                    useGraph.March,
+                    useGraph.April,
+                    useGraph.May,
+                    useGraph.June,
+                    useGraph.July,
+                    useGraph.August,
+                    useGraph.September,
+                    useGraph.October,
+                    useGraph.November,
+                    useGraph.December
+                ],
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            legend: {
+                labels: {
+                    fontColor: "white",
+                    fontSize: 18
+                }
+            },
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true,
+                        fontColor: "white"
+                    }
+                }],
+                xAxes: [{
+                    ticks: {
+                        fontColor: "white"
+                    }
+                }],
+            }
+        }
+    });
 }
 
 function genRand() {

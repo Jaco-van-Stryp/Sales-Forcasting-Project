@@ -80,11 +80,13 @@ function calculate(Main4Values) {
     return Predict;
 }
 
-function populatePredictions() {
-
+function convertToFireBase(obj) {
+    firebase.database().ref('predefined-searches/' + getCookie).set({
+        object: obj,
+    });
 }
 let Predictions = [];
-try {
+/*try {
     var cookie = getCookie();
 
     userData = db.collection("users").doc(firebaseUser.uid);
@@ -103,10 +105,10 @@ try {
     console.log(exception)
     document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";
 }
-
+*/
 
 function loadTable(streamData) {
-    db.collection("predefined-searches").doc(getCookie()).set({ streamData })
+    convertToFireBase(streamData);
     let PredictionMonths = [];
     for (var x = 0; x < streamData.length; x++) {
         PredictionMonths.push(calculate(streamData[x]))

@@ -120,6 +120,9 @@ function loadTable(streamData) {
     for (var x = 0; x < streamData.length; x++) {
         PredictionMonths.push(calculate(streamData[x]))
     }
+    if (streamData.length > 0) {
+        setSearchQuery();
+    }
     console.log(PredictionMonths)
     let table = document.getElementById("mainTable");
     table.innerHTML = "<tr><th> Company </th><th> Year </th> <th> January </th> <th> February </th> <th> March </th> <th> April </th> <th> May </th> <th> June </th> <th> July </th> <th> August </th> <th> September </th> <th> October </th> <th> November </th> <th> December </th><th> Total Predicted Sales </th></tr>";

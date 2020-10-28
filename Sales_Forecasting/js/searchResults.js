@@ -81,8 +81,8 @@ function calculate(Main4Values) {
 }
 
 function convertToFireBase(obj) {
-    const smartVal = getCookie();
-    db.collection('predefined-searches').doc(smartVal + "-Save").set({
+    const smartVal = getCookie("searchQuery")
+    db.collection('predefined-searches').doc(smartVal).set({
             object: obj,
         }).then(function() {
 
@@ -92,17 +92,16 @@ function convertToFireBase(obj) {
         });;
 }
 let Predictions = [];
-/*try {
-    var cookie = getCookie();
-
-    userData = db.collection("users").doc(firebaseUser.uid);
+try {
+    const smartVal = getCookie("searchQuery")
+    userData = db.collection("predefined-searches").doc(smartVal);
     userData.get().then(function(doc) {
         if (doc.exists) {
-            console.log(doc)
-            loadDataIntoPage()
+            Predictions = doc.get("Object")
         } else {
-            // doc.data() will be undefined in this case
             console.log("No such document!");
+            document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";
+
         }
     }).catch(function(error) {
         console.log("Error getting document:", error);
@@ -111,7 +110,7 @@ let Predictions = [];
     console.log(exception)
     document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";
 }
-*/
+
 
 function loadTable(streamData) {
     convertToFireBase(streamData);

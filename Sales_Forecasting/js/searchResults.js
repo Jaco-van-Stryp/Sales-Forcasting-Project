@@ -86,26 +86,19 @@ function populatePredictions() {
 let Predictions = [];
 try {
     var cookie = getCookie();
-    if (firebaseUser) {
-        userData = db.collection("users").doc(firebaseUser.uid);
-        userData.get().then(function(doc) {
-            if (doc.exists) {
-                console.log(doc)
-                loadDataIntoPage()
-            } else {
-                // doc.data() will be undefined in this case
-                console.log("No such document!");
-            }
-        }).catch(function(error) {
-            console.log("Error getting document:", error);
-        });
-    } else {
-        document.cookie = "self_authenticated=False"
-        document.cookie = "prevPage=profile_page"
-        document.location = ("sign_in.html");
 
-    }
-
+    userData = db.collection("users").doc(firebaseUser.uid);
+    userData.get().then(function(doc) {
+        if (doc.exists) {
+            console.log(doc)
+            loadDataIntoPage()
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
 } catch (exception) {
     console.log(exception)
     document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";

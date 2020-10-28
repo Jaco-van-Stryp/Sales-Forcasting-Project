@@ -81,8 +81,8 @@ function calculate(Main4Values) {
 }
 
 function convertToFireBase(obj) {
-    var cookie = getCookie();
-    db.collection('predefined-searches').doc(cookie).set({
+    const smartVal = getCookie();
+    db.collection('predefined-searches').doc(smartVal + "-Save").set({
             object: obj,
         }).then(function() {
 

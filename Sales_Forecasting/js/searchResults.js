@@ -16,7 +16,6 @@ const db = firebase.firestore();
 
 window.onload = function() {
     console.log("Loaded")
-    setSearchQuery()
 }
 
 function setSearchQuery() {
@@ -85,19 +84,28 @@ function populatePredictions() {
 
 }
 let Predictions = [];
-var curDocumentData = db.collection("predefined-searches").doc(getCookie());
+try {
+    var curDocumentData = db.collection("predefined-searches").doc(getCookie());
 
-curDocumentData.get().then(function(doc) {
-    if (doc.exists) {
-        Predictions = doc.data();
-    } else {
-        // doc.data() will be undefined in this case
-        console.log("No such document!");
-    }
-}).catch(function(error) {
-    console.log("Error getting document:", error);
-});
-loadTable(Predictions)
+
+    curDocumentData.get().then(function(doc) {
+        if (doc.exists) {
+            Predictions = doc.data();
+            setSearchQuery()
+            loadTable(Predictions)
+
+        } else {
+            // doc.data() will be undefined in this case
+            console.log("No such document!");
+        }
+    }).catch(function(error) {
+        console.log("Error getting document:", error);
+    });
+} catch (exception) {
+    console.log(exception)
+    document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";
+}
+
 
 function loadTable(streamData) {
     db.collection("predefined-searches").doc(getCookie()).set({ streamData })

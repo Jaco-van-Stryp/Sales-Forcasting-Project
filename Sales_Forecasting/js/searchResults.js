@@ -97,7 +97,9 @@ try {
     userData = db.collection("predefined-searches").doc(smartVal);
     userData.get().then(function(doc) {
         if (doc.exists) {
-            Predictions = doc.get("Object")
+            Predictions = doc.get("Object");
+            loadTable(Predictions);
+            setSearchQuery();
         } else {
             console.log("No such document!");
             document.getElementById("results_query").innerHTML = "Looks Like This Search Query Has No Stored Data!";

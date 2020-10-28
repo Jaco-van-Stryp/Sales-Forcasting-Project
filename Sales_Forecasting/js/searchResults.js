@@ -81,9 +81,14 @@ function calculate(Main4Values) {
 }
 
 function convertToFireBase(obj) {
-    db.ref('predefined-searches/' + getCookie).set({
-        object: obj,
-    });
+    db.collection('predefined-searches'.doc(getCookie)).set({
+            object: obj,
+        }).then(function() {
+
+        })
+        .catch(function(error) {
+
+        });;
 }
 let Predictions = [];
 /*try {

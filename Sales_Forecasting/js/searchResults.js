@@ -97,7 +97,7 @@ try {
     userData = db.collection("predefined-searches").doc(smartVal);
     userData.get().then(function(doc) {
         if (doc.exists) {
-            Predictions = doc.get("Object");
+            Predictions = doc.get("object");
             loadTable(Predictions);
             setSearchQuery();
         } else {

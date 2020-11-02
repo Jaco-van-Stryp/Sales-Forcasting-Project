@@ -45,10 +45,10 @@ function getCookie(cname) {
 
 
 
-function calculate(Main4Values) {
-    let jan = Main4Values.January;
-    let feb = Main4Values.Febuary;
-    let mar = Main4Values.March;
+function calculate(Main4Values) { //Mathimatical Predictions
+    let jan = Main4Values.January; //10
+    let feb = Main4Values.Febuary; //12
+    let mar = Main4Values.March; // 50
     let apr = (jan + feb + mar) / 3;
     let may = 0
     if (apr > mar) {
